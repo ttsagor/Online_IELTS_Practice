@@ -1,0 +1,37 @@
+/*
+ * Button style from customizer */
+
+input[type="submit"] {
+	background-color: $thim_body_primary_color;
+	&:hover {
+		background-color: darken($thim_body_primary_color, 10%);
+	}
+}
+
+.mc4wp-form {
+	input[type=submit] {
+		background-color: $thim_body_primary_color;
+		&:hover {
+			background-color: darken($thim_body_primary_color, 10%);
+		}
+	}
+}
+
+.btn-secondary {
+	border: 1px solid $thim_body_primary_color;
+	color: $thim_body_primary_color;
+	&:hover {
+		background: $thim_body_primary_color;
+		color: #ffffff;
+		border-color: $thim_body_primary_color;
+	}
+}
+
+.btn-primary {
+	background: $thim_body_primary_color;
+	border: 1px solid $thim_body_primary_color;
+	&:hover {
+		background: darken($thim_body_primary_color, 20%);
+		border-color: darken($thim_body_primary_color, 20%);;
+	}
+}

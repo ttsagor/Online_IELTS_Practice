@@ -1,0 +1,122 @@
+<?php
+
+return array(
+	'demo-edu-institute' => array(
+		'title'            => esc_html__( 'Demo Edu Institute', 'course-builder' ),
+		'demo_url'         => 'http://wordpresslms.thimpress.com',
+		'thumbnail_url'    => 'https://raw.githubusercontent.com/ThimPressWP/demo-data/master/course-builder/demos/assets/demo-edu-institute/screenshot.png',
+		'plugins_required' => array(
+			'thim-course-builder',
+			'learnpress',
+			'learnpress-certificates',
+			'learnpress-collections',
+			'learnpress-paid-membership-pro',
+			'learnpress-course-review',
+			'contact-form-7',
+			'woocommerce',
+			'wp-events-manager',
+			'js_composer',
+			'mailchimp-for-wp',
+		),
+	),
+	'demo-coursify' => array(
+		'title'            => esc_html__( 'Demo Coursify', 'course-builder' ),
+		'demo_url'         => 'http://wordpresslms.thimpress.com/demo-coursify/',
+		'thumbnail_url'    => 'https://raw.githubusercontent.com/ThimPressWP/demo-data/master/course-builder/demos/assets/demo-coursify/screenshot.png',
+		'plugins_required' => array(
+			'thim-course-builder',
+			'learnpress',
+			'learnpress-certificates',
+			'learnpress-collections',
+			'learnpress-paid-membership-pro',
+			'learnpress-course-review',
+			'contact-form-7',
+			'woocommerce',
+			'wp-events-manager',
+			'js_composer',
+			'mailchimp-for-wp',
+		),
+	),
+	'demo-elearning-2' => array(
+		'title'            => esc_html__( 'Demo eLearning II', 'course-builder' ),
+		'demo_url'         => 'http://wordpresslms.thimpress.com/demo-elearning-2/',
+		'thumbnail_url'    => 'https://raw.githubusercontent.com/ThimPressWP/demo-data/master/course-builder/demos/assets/demo-elearning-2/screenshot.png',
+		'plugins_required' => array(
+			'thim-course-builder',
+			'learnpress',
+			'learnpress-certificates',
+			'learnpress-collections',
+			'learnpress-paid-membership-pro',
+			'learnpress-course-review',
+			'contact-form-7',
+			'woocommerce',
+			'wp-events-manager',
+			'js_composer',
+			'mailchimp-for-wp',
+		),
+	),
+	'demo-single-instructor' => array(
+		'title'            => esc_html__( 'Demo Single Instructor', 'course-builder' ),
+		'demo_url'         => 'http://wordpresslms.thimpress.com/demo-single-instructor/',
+		'thumbnail_url'    => 'https://raw.githubusercontent.com/ThimPressWP/demo-data/master/course-builder/demos/assets/demo-single-instructor/screenshot.png',
+		'plugins_required' => array(
+			'thim-course-builder',
+			'learnpress',
+			'learnpress-certificates',
+			'learnpress-collections',
+			'learnpress-paid-membership-pro',
+			'learnpress-course-review',
+			'contact-form-7',
+			'woocommerce',
+			'wp-events-manager',
+			'js_composer',
+			'mailchimp-for-wp',
+		),
+	),
+	'demo-test-prep' => array(
+		'title'            => esc_html__( 'Demo Test Prep', 'course-builder' ),
+		'demo_url'         => 'http://wordpresslms.thimpress.com/demo-test-prep/',
+		'thumbnail_url'    => 'https://raw.githubusercontent.com/ThimPressWP/demo-data/master/course-builder/demos/assets/demo-test-prep/screenshot.png',
+		'plugins_required' => array(
+			'thim-course-builder',
+			'learnpress',
+			'learnpress-certificates',
+			'learnpress-collections',
+			'learnpress-paid-membership-pro',
+			'learnpress-course-review',
+			'contact-form-7',
+			'woocommerce',
+			'wp-events-manager',
+			'js_composer',
+			'mailchimp-for-wp',
+			'revslider'
+		),
+		'revsliders'       => array(
+			'demo-test-prep.zip',
+		)
+	),
+
+    'demo-corporate-learning' => array(
+        'title'            => esc_html__( 'Demo Corporate Learning', 'course-builder' ),
+        'demo_url'         => 'http://wordpresslms.thimpress.com/demo-corporate-learning/',
+        'thumbnail_url'    => 'https://raw.githubusercontent.com/ThimPressWP/demo-data/master/course-builder/demos/assets/demo-corporate-learning/screenshot.png',
+        'plugins_required' => array(
+            'thim-course-builder',
+            'learnpress',
+            'learnpress-certificates',
+            'learnpress-collections',
+            'learnpress-collections',
+            'learnpress-paid-membership-pro',
+            'learnpress-course-review',
+            'contact-form-7',
+            'woocommerce',
+            'wp-events-manager',
+            'js_composer',
+            'mailchimp-for-wp',
+	        'revslider'
+        ),
+        'revsliders'       => array(
+	        'demo-corporate-learning.zip',
+        )
+    ),
+);

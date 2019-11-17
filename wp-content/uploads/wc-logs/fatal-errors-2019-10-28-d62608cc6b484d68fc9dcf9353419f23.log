@@ -1,0 +1,2 @@
+2019-10-28T07:31:31+00:00 CRITICAL Call to undefined method LP_User_Guest::_get_found_rows() in /home/ielterti/public_html/wp-content/plugins/learnpress-assignments/templates/compatible/learnpress-buddypress/profile/assignments.php on line 20
+

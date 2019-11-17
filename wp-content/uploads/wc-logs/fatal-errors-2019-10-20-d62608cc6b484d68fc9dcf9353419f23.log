@@ -1,0 +1,2 @@
+2019-10-20T23:04:59+00:00 CRITICAL Call to undefined function bp_nouveau_get_groups_directory_nav_items() in /home/ielterti/public_html/wp-content/plugins/buddypress/bp-templates/bp-nouveau/buddypress-functions.php on line 584
+

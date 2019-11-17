@@ -1,0 +1,93 @@
+.f-row,
+.f-column,
+.f-field {
+  position: relative;
+}
+
+.f-row {
+  margin-bottom: 1em;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  align-items: stretch;
+  display: flex;
+  background-color: transparent;
+  border-radius: $border-radius;
+  transition: background-color 200ms;
+  padding: space();
+
+  &.will-remove {
+    background-color: $remove-bg;
+    box-shadow: 0 0 3px 1px $brand-error inset;
+  }
+}
+
+.f-input-group-wrap {
+  @include clearfix;
+  .f-row:first-of-type{
+    .remove-input-group{
+      display:none;
+    }
+  }
+}
+
+.f-input-group {
+  position: relative;
+
+  &:first-child {
+    .remove-input-group {
+      display: none;
+    }
+  }
+}
+
+.add-input-group {
+  float: right;
+  margin-top: 10px;
+}
+
+.remove-input-group {
+  position: absolute;
+  right: -32px;
+  width: space(3);
+  height: space(3);
+  bottom: 0;
+  border: 0 none;
+  background: transparent;
+  outline: 0 none;
+  line-height: 0;
+  padding: space() space(1);
+
+  &:hover {
+    .svg-icon {
+      fill: $brand-error;
+    }
+  }
+
+  .svg-icon {
+    pointer-events: none;
+  }
+}
+
+.form-check-input:only-child {
+  position: absolute;
+}
+
+.svg-icon {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.f-column {
+  padding: 0 space();
+  float: left;
+  max-width: none;
+  flex-direction: column;
+  &:first-of-type {
+    padding-left: 0;
+  }
+  &:last-of-type {
+    padding-right: 0;
+  }
+}

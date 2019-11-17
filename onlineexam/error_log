@@ -1,0 +1,32 @@
+[16-Dec-2018 16:47:52 America/New_York] PHP Fatal error:  Cannot redeclare WebRegistrationModel::insertDb() in /home/ielterti/public_html/onlineexam/application/models/WebRegistrationModel.php on line 30
+[17-Dec-2018 04:21:18 Asia/Dhaka] PHP Fatal error:  Call to undefined method WebRegistrationModel::set() in /home/ielterti/public_html/onlineexam/application/models/WebRegistrationModel.php on line 98
+[17-Dec-2018 04:23:13 Asia/Dhaka] PHP Fatal error:  Call to undefined method WebRegistrationModel::set() in /home/ielterti/public_html/onlineexam/application/models/WebRegistrationModel.php on line 98
+[17-Dec-2018 04:26:43 Asia/Dhaka] PHP Fatal error:  Call to undefined method WebRegistrationModel::on_duplicate() in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 240
+[16-Dec-2018 17:35:46 America/New_York] PHP Parse error:  syntax error, unexpected '.' in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 227
+[17-Dec-2018 04:36:55 Asia/Dhaka] PHP Fatal error:  Call to undefined method CI_DB_mysqli_driver::real_escape_string() in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 227
+[17-Dec-2018 04:41:56 Asia/Dhaka] PHP Fatal error:  Call to undefined method CI_DB_mysqli_driver::real_escape_string() in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 232
+[18-Dec-2018 20:28:31 Asia/Dhaka] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ielterti/public_html/onlineexam/application/views/add-reading-answer.php on line 287
+[18-Dec-2018 09:46:31 America/New_York] PHP Parse error:  syntax error, unexpected 'redirect' (T_STRING) in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 416
+[18-Dec-2018 22:00:52 Asia/Dhaka] PHP Fatal error:  Call to undefined method WebRegistrationModel::insertDb() in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 174
+[18-Dec-2018 11:33:52 America/New_York] PHP Parse error:  syntax error, unexpected '$data' (T_VARIABLE) in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 194
+[18-Dec-2018 23:28:10 Asia/Dhaka] PHP Parse error:  syntax error, unexpected 'pull' (T_STRING), expecting ',' or ';' in /home/ielterti/public_html/onlineexam/application/views/all-exam-module.php on line 11
+[19-Dec-2018 03:00:27 America/New_York] PHP Parse error:  syntax error, unexpected '-', expecting '(' in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 449
+[19-Dec-2018 05:41:20 America/New_York] PHP Parse error:  syntax error, unexpected '$new_name' (T_VARIABLE) in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 483
+[19-Dec-2018 05:59:58 America/New_York] PHP Parse error:  syntax error, unexpected '$fl_name' (T_VARIABLE) in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 485
+[19-Dec-2018 06:00:35 America/New_York] PHP Parse error:  syntax error, unexpected 'print_r' (T_STRING) in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 487
+[19-Dec-2018 17:00:49 Asia/Dhaka] PHP Fatal error:  Call to undefined function insertDb() in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 486
+[19-Dec-2018 17:16:57 Asia/Dhaka] PHP Parse error:  syntax error, unexpected 'fa' (T_STRING), expecting ',' or ';' in /home/ielterti/public_html/onlineexam/application/views/file-list.php on line 30
+[19-Dec-2018 17:19:24 Asia/Dhaka] PHP Parse error:  syntax error, unexpected 'btn' (T_STRING), expecting ',' or ';' in /home/ielterti/public_html/onlineexam/application/views/file-list.php on line 32
+[19-Dec-2018 17:25:52 Asia/Dhaka] PHP Parse error:  syntax error, unexpected 'audio' (T_STRING), expecting ',' or ';' in /home/ielterti/public_html/onlineexam/application/views/file-list.php on line 28
+[19-Dec-2018 07:27:42 America/New_York] PHP Parse error:  syntax error, unexpected 'deletefile' (T_STRING), expecting variable (T_VARIABLE) in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 493
+[19-Dec-2018 08:25:17 America/New_York] PHP Fatal error:  Cannot redeclare AdminPanel::listeningquestionaddpassageformsubmit() in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 400
+[21-Dec-2018 00:52:10 Asia/Dhaka] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home/ielterti/public_html/onlineexam/application/views/all-exam-module.php on line 36
+[21-Dec-2018 00:53:12 Asia/Dhaka] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home/ielterti/public_html/onlineexam/application/views/all-exam-module.php on line 86
+[18-Jan-2019 02:19:55 Asia/Dhaka] PHP Fatal error:  Cannot use object of type stdClass as array in /home/ielterti/public_html/onlineexam/application/views/upload-audio.php on line 19
+[17-Jan-2019 16:31:31 America/New_York] PHP Fatal error:  Cannot redeclare AdminPanel::allfilelist() in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 1645
+[17-Jan-2019 16:32:02 America/New_York] PHP Fatal error:  Cannot redeclare AdminPanel::allfilelist() in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 1645
+[17-Jan-2019 20:13:21 America/New_York] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 16
+[22-Feb-2019 04:56:41 Asia/Dhaka] PHP Parse error:  syntax error, unexpected ''>Add</a></td>' (T_ENCAPSED_AND_WHITESPACE), expecting ',' or ';' in /home/ielterti/public_html/onlineexam/application/views/add-moct-test-package.php on line 30
+[21-Feb-2019 18:13:01 America/New_York] PHP Parse error:  syntax error, unexpected ';', expecting identifier (T_STRING) or variable (T_VARIABLE) or '{' or '$' in /home/ielterti/public_html/onlineexam/application/controllers/AdminPanel.php on line 1696
+[22-Feb-2019 10:58:00 Asia/Dhaka] PHP Parse error:  syntax error, unexpected '&' in /home/ielterti/public_html/onlineexam/application/views/examdashboard.php on line 77
+[01-May-2019 09:34:42 Asia/Dhaka] PHP Parse error:  syntax error, unexpected ''>Start Listening Exam</a>";' (T_ENCAPSED_AND_WHITESPACE), expecting ',' or ';' in /home/ielterti/public_html/onlineexam/application/views/listening-instruction.php on line 28

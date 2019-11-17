@@ -1,0 +1,1 @@
+[25-Apr-2019 10:14:54 America/New_York] PHP Fatal error:  Call to undefined function _deprecated_file() in /home/ielterti/public_html/wp-includes/locale.php on line 10

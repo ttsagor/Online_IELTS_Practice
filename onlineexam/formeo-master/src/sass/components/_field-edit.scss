@@ -1,0 +1,391 @@
+.field-edit {
+  display: none;
+  overflow: hidden;
+
+  label {
+    font-size: 0.825em;
+  }
+
+  .panel-nav {
+    margin-bottom: 0;
+    padding: 0;
+    overflow: hidden;
+    border-top-left-radius: $input-border-radius;
+    border-top-right-radius: $input-border-radius;
+    button {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &.field-edit-options {
+    list-style: decimal;
+  }
+
+  .active-panel {
+    background-color: $white;
+  }
+
+  .field-prop {
+    display: flex;
+  }
+
+  .prop-controls {
+    flex-shrink: 0;
+    align-items: center;
+    display: flex;
+    margin-left: 3px;
+    button {
+      position: relative;
+    }
+
+    .svg-icon {
+      width: $prop-btn-width / 2;
+      height: $prop-btn-width / 2;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .prop-control {
+    width: $prop-btn-width;
+    height: $prop-btn-width;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    padding: 0;
+
+    @for $i from 1 through 4 {
+      &:nth-of-type(#{$i}) {
+        right: $i * $prop-btn-width - $prop-btn-width;
+      }
+    }
+
+    &:first-child {
+      right: 0;
+    }
+
+    :not(.control-count-1) & {
+      &:last-child {
+        border-radius: $input-border-radius 0 0 $input-border-radius;
+        margin-right: -1px;
+        display: none;
+      }
+
+      &:first-child {
+        border-radius: $input-border-radius;
+      }
+    }
+
+    &:hover {
+      &:first-child {
+        border-radius: 0 $input-border-radius $input-border-radius 0;
+
+        &:last-child {
+          border-radius: $input-border-radius;
+        }
+      }
+
+      &:last-child {
+        display: inline-block;
+      }
+    }
+
+    &:last-child:first-child {
+      display: inline-block;
+      border-radius: $input-border-radius;
+      margin-right: 0;
+    }
+  }
+
+  .prop-wrap {
+    position: relative;
+    margin-bottom: space(1);
+  }
+
+  .field-edit-group {
+    padding: space(1) space(1) 0;
+  }
+
+  [contenteditable] {
+    @extend %input-style;
+  }
+
+  .prop-inputs,
+  .prop-controls {
+    transition: width 150ms;
+    will-change: width;
+
+    .f-addon,
+    input:not([type='checkbox']):not([type='radio']),
+    select,
+    textarea,
+    [contenteditable] {
+      font-size: 0.825em;
+      flex: 1 1 auto;
+      &:focus {
+        z-index: 1;
+      }
+    }
+
+    [class^='condition-'] + select,
+    select + [class^='condition-'] {
+      margin-left: -1px;
+    }
+  }
+
+  .control-count-2 {
+    .prop-controls {
+      &:hover {
+        width: $prop-btn-width * 2;
+
+        + .prop-inputs {
+          width: calc(100% - #{$prop-btn-width});
+        }
+      }
+    }
+  }
+
+  &.panel-count-1 {
+    .panel-nav {
+      border-bottom: 1px solid $gray-light;
+
+      button {
+        display: none;
+      }
+    }
+
+    .panel-labels {
+      background-color: transparent;
+    }
+  }
+}
+
+.f-condition-row {
+  display: flex;
+  width: 100%;
+  margin-top: -1px;
+  border: 1px solid $gray-lighter;
+  input,
+  select,
+  [contenteditable] {
+    border-width: 0;
+    border-radius: 0;
+    width: inherit;
+    box-shadow: 0 0 0 1px $gray-lighter;
+    &:focus {
+      box-shadow: 0 0 0 1px $input-focus;
+    }
+  }
+  &:first-child {
+    input:last-child,
+    select:last-child {
+      border-top-right-radius: $input-border-radius;
+    }
+  }
+  &:last-child {
+    input:last-child,
+    select:last-child {
+      border-bottom-right-radius: $input-border-radius;
+    }
+  }
+  &:first-child {
+    border-top-left-radius: $input-border-radius;
+    border-top-right-radius: $input-border-radius;
+  }
+  &:last-child {
+    border-bottom-left-radius: $input-border-radius;
+    border-bottom-right-radius: $input-border-radius;
+  }
+
+  .condition-logical {
+    max-width: space(7);
+    text-transform: uppercase;
+  }
+
+  div.condition-source,
+  div.condition-target {
+    position: relative;
+    width: 100%;
+  }
+
+  [class^='condition-'] {
+    max-width: 100%;
+    transition: max-width $animation-speed-base;
+    will-change: max-width;
+  }
+
+  &.if-condition-row {
+    &.condition-sourceProperty-isVisible,
+    &.condition-sourceProperty-isNotVisible {
+      .condition-comparison,
+      .condition-target,
+      .condition-assignment,
+      .condition-value,
+      .condition-targetProperty {
+        @include hideConditionField;
+      }
+    }
+  }
+
+  &.then-condition-row {
+    &.condition-targetProperty-isVisible,
+    &.condition-targetProperty-isNotVisible {
+      .condition-comparison,
+      .condition-assignment,
+      .condition-value {
+        @include hideConditionField;
+      }
+    }
+  }
+
+  &.condition-target {
+    .condition-targetProperty {
+      @include hideConditionField;
+    }
+  }
+
+  &.condition-source {
+    .condition-sourceProperty {
+      @include hideConditionField;
+    }
+  }
+}
+
+.f-autocomplete-display-field + .f-autocomplete-list {
+  &:focus {
+    z-index: 100;
+  }
+}
+
+[class$='-focused'] {
+  z-index: 1;
+  .f-autocomplete-list {
+    z-index: 100;
+  }
+}
+
+.conditions-prop-inputs {
+  label.condition-label {
+    display: inline-flex;
+    flex: 0 0 auto;
+    box-shadow: 0 0 0 1px $gray-lighter;
+    align-items: center;
+    padding: space();
+    border-right: 0;
+    text-transform: uppercase;
+    color: $gray-light;
+    &.if-condition-label {
+      border-top-left-radius: $input-border-radius;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &.then-condition-label {
+      border-bottom-left-radius: $input-border-radius;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      border-top: 0;
+    }
+  }
+}
+
+.field-edit-group {
+  @extend %no-list-style;
+}
+
+.hidden-property {
+  display: none;
+}
+
+.options-panel {
+  .prop-wrap {
+    margin-bottom: space(1);
+  }
+
+  .input-group-addon {
+    line-height: 0;
+  }
+
+  .prop-labels {
+    padding: space(1) 34px space(1) space(1);
+
+    .input-group-addon {
+      font-size: 12px;
+    }
+
+    label {
+      font-size: 12px;
+      width: 50%;
+      position: relative;
+      display: table-cell;
+    }
+  }
+
+  .prop-label-selected,
+  .prop-label-disabled {
+    width: 1% !important;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 0 none;
+    background-color: transparent;
+  }
+}
+
+.panel-action-buttons {
+  @include clearfix;
+
+  padding: 0 space(1) space(1);
+
+  [class^='add-'] {
+    float: right;
+  }
+}
+
+.prop-inputs {
+  width: 100%;
+  align-items: center;
+  vertical-align: bottom;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+
+  &.conditions-prop-inputs {
+    flex-direction: column;
+  }
+
+  .f-field-group {
+    width: 100%;
+    margin-bottom: 0;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .f-addon {
+    display: flex;
+    align-items: center;
+    flex: 0;
+    &:first-child {
+      margin-right: -1px;
+    }
+    &:last-child {
+      margin-left: -1px;
+    }
+  }
+
+  label {
+    padding-right: 1em;
+    margin-bottom: 0;
+  }
+
+  &.attrs-prop-inputs {
+    .f-addon,
+    input:not([type='checkbox']):not([type='radio']),
+    select,
+    textarea,
+    [contenteditable] {
+      flex: 2;
+    }
+  }
+}

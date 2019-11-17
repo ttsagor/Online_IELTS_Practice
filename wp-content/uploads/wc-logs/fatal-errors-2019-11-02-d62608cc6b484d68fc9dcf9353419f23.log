@@ -1,0 +1,14 @@
+2019-11-02T00:04:44+00:00 CRITICAL Call to undefined method LP_User_Guest::_get_found_rows() in /home/ielterti/public_html/wp-content/plugins/learnpress-buddypress/templates/profile/courses.php on line 20
+
+2019-11-02T02:42:43+00:00 CRITICAL Call to undefined method LP_User_Guest::_get_found_rows() in /home/ielterti/public_html/wp-content/plugins/learnpress-buddypress/templates/profile/quizzes.php on line 20
+
+2019-11-02T03:20:10+00:00 CRITICAL Call to undefined method LP_User_Guest::_get_found_rows() in /home/ielterti/public_html/wp-content/plugins/learnpress-assignments/templates/compatible/learnpress-buddypress/profile/assignments.php on line 20
+
+2019-11-02T07:35:49+00:00 CRITICAL Call to undefined method LP_User_Guest::_get_found_rows() in /home/ielterti/public_html/wp-content/plugins/learnpress-buddypress/templates/profile/courses.php on line 20
+
+2019-11-02T13:39:32+00:00 CRITICAL Call to undefined method LP_User_Guest::_get_found_rows() in /home/ielterti/public_html/wp-content/plugins/learnpress-buddypress/templates/profile/courses.php on line 20
+
+2019-11-02T16:01:37+00:00 CRITICAL Call to undefined method LP_User_Guest::_get_found_rows() in /home/ielterti/public_html/wp-content/plugins/learnpress-assignments/templates/compatible/learnpress-buddypress/profile/assignments.php on line 20
+
+2019-11-02T17:16:29+00:00 CRITICAL Call to undefined method LP_User_Guest::_get_found_rows() in /home/ielterti/public_html/wp-content/plugins/learnpress-assignments/templates/compatible/learnpress-buddypress/profile/assignments.php on line 20
+

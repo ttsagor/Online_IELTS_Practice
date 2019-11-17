@@ -1,0 +1,4 @@
+2019-10-31T00:32:35+00:00 CRITICAL Call to undefined method LP_User_Guest::_get_found_rows() in /home/ielterti/public_html/wp-content/plugins/learnpress-buddypress/templates/profile/quizzes.php on line 20
+
+2019-10-31T09:40:01+00:00 CRITICAL Call to undefined method LP_User_Guest::_get_found_rows() in /home/ielterti/public_html/wp-content/plugins/learnpress-buddypress/templates/profile/courses.php on line 20
+

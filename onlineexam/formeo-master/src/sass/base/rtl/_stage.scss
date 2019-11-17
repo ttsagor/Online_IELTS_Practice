@@ -1,0 +1,8 @@
+.stage-wrap {
+  float: right;
+
+  .stage {
+    padding-left: space();
+    padding-right: $icon-size - 1;
+  }
+}

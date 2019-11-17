@@ -1,0 +1,2287 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+
+<!-- Mirrored from bside.smaroofi.com/bside/bside_doc/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 16 Dec 2018 14:45:25 GMT -->
+<head>
+	<meta charset="utf-8">
+	
+	<title>BSIDE</title>
+	
+	<meta name="description" content="BSIDE -- Bootstrap-style IDE">
+	<meta name="author" content="Sourena Maroofi">
+	<meta name="copyright" content="Sourena Maroofi">
+	<meta name="generator" content="Documenter v2.0 http://rxa.li/documenter">
+	<meta name="date" content="2016-08-09T00:00:00+02:00">
+	
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	
+	<link rel="stylesheet" href="assets/css/custom.css" media="screen">
+
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+	<script src="assets/js/jquery.js"></script>
+	<script src="assets/js/cufon.js"></script><script src="assets/js/font.js"></script><script>Cufon.replace("h1%2c%20h2%2c%20h3%2c%20h4%2c%20h5%2c%20h6.html");</script>
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+	
+	<script>document.createElement('section');var duration='450',easing='easeOutExpo';</script>
+	<script src="assets/js/script.js"></script>
+	
+	<style>
+		html{background-color:#FFFFFF;color:#585858;}
+		::-moz-selection{background:#111111;color:#F1F1F1;}
+		::selection{background:#111111;color:#F1F1F1;}
+		#documenter_sidebar #documenter_logo{background-image:url(assets/images/image_1.png);}
+		a{color:#111111;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #585858, #3B3B3B);
+			  background-image: -ms-linear-gradient(top, #585858, #3B3B3B);
+			  background-image: -webkit-gradient(linear, 0 0, 0 585858%, from(#333333), to(#3B3B3B));
+			  background-image: -webkit-linear-gradient(top, #585858, #3B3B3B);
+			  background-image: -o-linear-gradient(top, #585858, #3B3B3B);
+			  background-image: linear-gradient(top, #585858, #3B3B3B);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#585858', endColorstr='#3B3B3B', GradientType=0);
+			  border-color: #3B3B3B #3B3B3B #bfbfbf;
+			  color:#F9F9F9;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #585858 #585858 #bfbfbf;
+		  background-color: #3B3B3B;
+		}
+		hr{border-top:1px solid #E5E5E5;border-bottom:1px solid #F9F9F9;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#333333;color:#F1F1F1;http://static.revaxarts-themes.com/noise.gif}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #444444;-moz-text-shadow:1px 1px 0px #444444;text-shadow:1px 1px 0px #444444;}
+		#documenter_sidebar ul{border-top:1px solid #222222;}
+		#documenter_sidebar ul a{border-top:1px solid #444444;border-bottom:1px solid #222222;color:#F1F1F1;}
+		#documenter_sidebar ul a:hover{background:#111111;color:#F1F1F1;border-top:1px solid #111111;}
+		#documenter_sidebar ul a.current{background:#111111;color:#F1F1F1;border-top:1px solid #111111;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+        tbody tr td{
+            border : 1px solid black;
+        }
+        section {
+            font-family: tahoma;
+            font-size: 1.2em;
+        }
+	</style>
+	
+</head>
+<body class="documenter-project-bside">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo" style="background-color:#2c4c7e;"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#what_is_this" title="What is this?">What is this?</a></li>
+			<li><a href="#features" title="Features">Features</a></li>
+			<li><a href="#dependencies" title="Dependencies">Dependencies</a></li>
+			<li><a href="#bside_structure" title="BSIDE Structure">BSIDE Structure</a></li>
+			<li><a href="#components" title="Components">Components</a></li>
+			<li><a href="#form" title="Form">Form</a></li>
+			<li><a href="#row" title="Row">Row</a></li>
+			<li><a href="#blank" title="Blank">Blank</a></li>
+			<li><a href="#paragraph" title="Paragraph">Paragraph</a></li>
+			<li><a href="#link" title="Link">Link</a></li>
+			<li><a href="#header" title="Header">Header</a></li>
+			<li><a href="#label" title="Label">Label</a></li>
+			<li><a href="#textbox" title="Textbox">Textbox</a></li>
+			<li><a href="#textarea" title="Textarea">Textarea</a></li>
+			<li><a href="#password" title="Password">Password</a></li>
+			<li><a href="#number" title="Number">Number</a></li>
+			<li><a href="#email" title="Email">Email</a></li>
+			<li><a href="#radiobox" title="Radiobox">Radiobox</a></li>
+			<li><a href="#checkbox" title="Checkbox">Checkbox</a></li>
+			<li><a href="#combobox" title="Combobox">Combobox</a></li>
+			<li><a href="#fieldset" title="Fieldset">Fieldset</a></li>
+			<li><a href="#sectionbreaker" title="SectionBreaker">SectionBreaker</a></li>
+			<li><a href="#button" title="Button">Button</a></li>
+			<li><a href="#slider" title="Slider">Slider</a></li>
+			<li><a href="#rating" title="Rating">Rating</a></li>
+			<li><a href="#fileupload" title="Fileupload">Fileupload</a></li>
+			<li><a href="#image" title="Image">Image</a></li>
+			<li><a href="#export_output" title="Export Output">Export Output</a></li>
+			<li><a href="#for_developers" title="For Developers">For Developers</a></li>
+			<li><a href="#config" title="Config">Config</a></li>
+			<li><a href="#support" title="Support">Support</a></li>
+            <!--
+			<li><a href="#example_1" title="example 1">Example 1</a></li>
+			<li><a href="#example_2" title="example 2">Example 2</a></li>
+			<li><a href="#example_3" title="example 3">Example 3</a></li>
+			<li><a href="#example_4" title="example 4">Example 4</a></li>
+			<li><a href="#example_5" title="example 5">Example 5</a></li>
+			<li><a href="#example_6" title="example 6">Example 6</a></li>
+			<li><a href="#example_7" title="example 7">Example 7</a></li>
+			<li><a href="#example_8" title="example 8">Example 8</a></li>
+			<li><a href="#example_9" title="example 9">Example 9</a></li>
+			<li><a href="#example_10" title="example 10">Example 10</a></li>
+            -->
+		</ul>
+		<div id="documenter_copyright">Copyright Sourena Maroofi 2016<br>
+		made with the <a href="http://rxa.li/documenter">Documenter v2.0</a> 
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>BSIDE</h1>
+	
+	
+	<hr>
+	<ul>
+	<li>created: 04/10/2011</li>
+	<li>latest update: 08/10/2016</li>
+	<li>by: Sourena Maroofi</li>
+	
+	<li>Email: <a href="mailto:&#109;&#97;&#114;&#111;&#111;&#102;&#105;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#109;&#97;&#114;&#111;&#111;&#102;&#105;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></li>
+	</ul>
+	
+	</section>
+	
+	<section id="what_is_this">
+	<div class="page-header"><h3>What is this?</h3><hr class="notop"></div>
+<p>
+	BSIDE is an opensource responsive Form builder and an easy to use tool to create all kind of forms and export it as HTML, JSON or zip package.</p>
+<p>
+	You can design and create custom forms and layouts just using mouse clicks and no need to write code in HTML or Javascript.</p>
+<p>
+	It has a very neat and structured source code so you can easily add it as part of a bigger software.</p>
+<p>
+	you can create and publish forms without writing a single line of code.</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="features">
+	<div class="page-header"><h3>Features</h3><hr class="notop"></div>
+<ul>
+	<li>
+		<strong>Custom Colors</strong></li>
+	<li>
+		<strong>Custom CSS</strong></li>
+	<li>
+		<strong>zip File Creation</strong></li>
+	<li>
+		<strong>JSON/HTML Export</strong></li>
+	<li>
+		<strong>Fully responsive forms</strong></li>
+	<li>
+		<strong>custom layouts</strong></li>
+	<li>
+		<strong>Nested form/panels</strong></li>
+	<li>
+		<strong>Several components such as textbox, textarea, slider, button, paragraph, link and etc</strong></li>
+</ul>
+</section>
+<section id="dependencies">
+	<div class="page-header"><h3>Dependencies</h3><hr class="notop"></div>
+<p>
+	BSIDE has no dependency not even JQuery.</p>
+<p>
+	All the methods and functions are written from scratch.it&nbsp; just uses some free and open source libraries inside it:</p>
+<p style="color:red;">
+	You MUST have PHP installed on your server ONLY if you want to download zip package of your form.
+	If you don't want this option, then there is no need to install php on you server.
+</p>
+<p>
+	1 - <strong>Notify.js</strong> by Gokulakrishnan Kalaikovan</p>
+<p>
+	Notify.js is freely distributable under the MIT license.</p>
+<p>
+	2 - <strong>majaX&nbsp;&nbsp; </strong>Version 0.2.6 by Simon&nbsp; Waldherr</p>
+<p>
+	License:&nbsp; MIT</p>
+<p>
+	3 - <strong>jsModal </strong>by Henry Rune Tang Kai &lt;&#104;&#101;&#110;&#114;&#121;&#64;&#104;&#101;&#110;&#114;&#121;&#115;&#46;&#115;&#101;&gt;</p>
+<p>
+	License: http://www.opensource.org/licenses/mit-license.php</p>
+<p>
+	4 - <strong>NicEdit </strong>- Micro Inline WYSIWYG by Brian Kirchoff</p>
+<p>
+	NicEdit is distributed under the terms of the MIT license</p>
+<p>
+	5 - <strong>bootstrap</strong> css file</p>
+<p>
+	Code licensed <a href="https://github.com/twbs/bootstrap/blob/master/LICENSE" rel="license" target="_blank">MIT</a></p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="bside_structure">
+	<div class="page-header"><h3>BSIDE Structure</h3><hr class="notop"></div>
+<p>
+	This is the layout of the Bside.</p>
+<p>
+	It has two main parts :</p>
+<p>
+	1 - The Design panel (in the right)</p>
+<p>
+	2 - Toolbar menu (in the left)</p>
+<p>
+	Toolbar menu consists of four parts : Tools,Page,Element and Misc</p>
+<p>
+	we&#39;ll explain each part of this menu later in tutorial.</p>
+<p>
+	<img alt="" src="assets/images/structure_bside.png"></p>
+</section>
+<section id="components">
+	<div class="page-header"><h3>Components</h3><hr class="notop"></div>
+<p>
+	This section describe briefly the components of the BSIDE.</p>
+<p>
+	BSIDE includes several components such as :</p>
+    <center>
+<table border="1" cellpadding="1" cellspacing="1" height="54" width="633">
+	<tbody>
+		<tr>
+			<td>
+				<br /><br /><br /><br /><br /><br />&nbsp;Form</td>
+			<td><br />
+				<p>
+					<img alt="" src="assets/images/form.png"></p>
+				<p>
+					&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<br /><br /><br />&nbsp; Numbefield</td>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					<img alt="" src="assets/images/number.png"></p>
+				<p>
+					&nbsp;</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;Textbox</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				&nbsp;<img alt="" src="assets/images/number.png"></td>
+		</tr>
+		<tr>
+			<td>
+				&nbsp;
+				<p>
+					&nbsp;Textarea</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				<img alt="" src="assets/images/textarea.png"></td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;password</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				&nbsp;<img alt="" src="assets/images/password.png"></td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;Email</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				&nbsp; <img alt="" src="assets/images/email.png"></td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;Label</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				<img alt="" src="assets/images/label.png"></td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;Header</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				<img alt="" src="assets/images/header.png"></td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;Link</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				<img alt="" src="assets/images/hyperlink.png"></td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;Paragraph</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				<img alt="" src="assets/images/paragraph.png"></td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;Radiobox</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				<img alt="" src="assets/images/radiobox.png"></td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;Checkbox</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				<img alt="" src="assets/images/checkbox.png"></td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;Combobox</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				<img alt="" src="assets/images/combobox.png"></td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;Blank</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td>
+				<h3><br />
+					&nbsp;This is Just an empty &lt;div&gt;&lt;/div&gt;</h3>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;Row</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				&nbsp;<img alt="" src="assets/images/row.png"></td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;Sectionbreaker</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				<img alt="" src="assets/images/sectionbreaker.png"></td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;Button</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				&nbsp;<img alt="" src="assets/images/button.png"></td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;Slider</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				<img alt="" src="assets/images/slider.png"></td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;Rating</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				<img alt="" src="assets/images/rating.png"></td>
+		</tr>
+		<tr>
+			<td>
+				<p>
+					&nbsp;</p>
+				<p>
+					&nbsp;Fileupload</p>
+				<p>
+					&nbsp;</p>
+			</td>
+			<td><br />
+				&nbsp;<img alt="" src="assets/images/fileupload.png"></td>
+		</tr>
+	</tbody>
+</table></center>
+<p>
+	These are almost all the components of BSIDE.</p>
+<p>
+	In the next section we&#39;ll describe&nbsp; attributes and properties of each components.</p>
+</section>
+<section id="form">
+	<div class="page-header"><h3>Form</h3><hr class="notop"></div>
+<p>
+	Forms are the most important components of BSIDE. It&#39;s the first component you must add to design area. To add form to design area just click on the form component in the Tools menu.</p>
+<p>
+	After you add form to design area just click on the title of the form and you&#39;ll see a list of attributes in the element tab of toolbar menu something like below figure:</p>
+<p>
+	&nbsp;</p>
+<center>
+	<img alt="" height="477" src="assets/images/form_element.png" width="320"></center>
+<p>
+	I&#39;ll explain each attribute here:</p>
+<div class="alert alert-success">
+	<em><strong>Form title</strong></em></div>
+<p>
+	This is the title of the form appears in the titlebar. like this:</p>
+<p>
+	&nbsp;</p>
+<center>
+	<img alt="" src="assets/images/form_title.png"></center>
+<p>
+	Also you can click on the pencil icon and use the WYSWYG editor to style the title.</p>
+<div class="alert alert-success">
+	Has Header?</div>
+<p>
+	If you need a form without titlebar, just uncheck this field and press apply button.</p>
+<p>
+	the default value is checked ( form has titlebar )</p>
+<div class="alert alert-success">
+	Footer</div>
+<p>
+	This option is the form footer. you can specify the text you want to appear in the footer of the form.</p>
+<p>
+	&nbsp;</p>
+<center>
+	<p>
+		<img alt="" src="assets/images/form_footer.png"></p>
+</center>
+<div class="alert alert-success">
+	Has footer?</div>
+<p>
+	you can remove the footer bar if you uncheck this field.</p>
+<p>
+	This is an empty form without footer and header:</p>
+<center>
+	<p>
+		<img alt="" src="assets/images/form_nofooter_noheader.png"></p>
+</center>
+<div class="alert alert-success">
+	Header BG color</div>
+<p>
+	This option specify the color of the header bar.</p>
+<p>
+	you can define a color by it&#39;s name like &#39;red&#39; , &#39;yellow&#39; , &#39;white&#39; , &#39;darkblue&#39; .... or you can with its code like &#39;#FFFF00&#39; , &#39;#FF23AB&#39;, &#39;#1265BC&#39; ... or use the gear icon in the left side of the textbox and choose a color from color picker.</p>
+<p>
+	the default color is blue.</p>
+<div class="alert alert-success">
+	Footer BG color</div>
+<p>
+	Same as &#39;header BG color&#39; but for footer.</p>
+<p>
+	See some sample of custom color in header and footer:</p>
+<center>
+	<p>
+		<img alt="" src="assets/images/form_color_sample.png"></p>
+</center>
+<div class="alert alert-success">
+	Form name</div>
+<p>
+	The name attribute is used to reference elements in a JavaScript, or to reference form data after a form is submitted.</p>
+<p>
+	This is the name of the form you want to submit. it is not necessary to fill this attribute and if you don&#39;t know how to use it just leave it blank but if you want to do something more than form submission you may complete this field.</p>
+<p>
+	If you want to know more about form name use this <a href="http://www.w3schools.com/tags/att_form_name.asp">help</a></p>
+<div class="alert alert-success">
+	Form action</div>
+<p>
+	It specifies Where to send the form-data when the form is submitted.</p>
+<p>
+	Possible values are :</p>
+<ul>
+	<li>
+		An absolute URL - points to another web site (like &quot;http://www.example.com/example.htm&quot;)</li>
+	<li>
+		A relative URL - points to a file within a web site (like &quot;example.htm&quot;)</li>
+</ul>
+<p>
+	Or if you don&#39;t know how to use it just leave it blank.</p>
+<div class="alert alert-success">
+	Form method</div>
+<p>
+	The form method attribute specifies how to send form-data (the form-data is sent to the page specified in the action attribute).</p>
+<p>
+	The form-data can be sent as URL variables (with method=&quot;get&quot;) or as HTTP post transaction (with method=&quot;post&quot;).</p>
+<p>
+	Possible values are &#39;POST&#39; and &#39;GET&#39;</p>
+<p>
+	If you don&#39;t know which one to use just leave it blank. (default value is get).</p>
+
+<div class="alert alert-success">
+	Form encoding type</div>
+<p>
+	The enctype attribute specifies how the form-data should be encoded when submitting it to the server.</p>
+<p>
+	<b>Note:</b> The enctype attribute can be used only if <strong>form method </strong>is "post".</p>
+<p>
+	Possible values are:</p>
+<ul>
+	<li>
+		application/x-www-form-urlencoded (default value)</li>
+	<li>
+		multipart/form-data</li>
+	<li>
+		text/plain</li>
+</ul>
+<p>
+	application/x-www-form-urlencoded (default value):</p>
+<p>
+	Default. All characters are encoded before sent (spaces are converted to "+" symbols, and special characters are converted to ASCII HEX values)</p>
+<p>
+	multipart/form-data:</p>
+<p>
+	No characters are encoded. This value is required when you are using forms that have a file upload control</p>
+<p>
+	text/plain:</p>
+<p>
+	Spaces are converted to "+" symbols, but no special characters are encoded.</p>
+<p>
+	<strong>NOTE: If you don't know which value to set just remember two things:</strong></p>
+<p>
+	<strong>1- if you have fileupload component in your form then use 'multipart/form-data'.</strong></p>
+<p>
+	<strong>2 - If you don't have fileupload control and you don't know which value to use then use the default value.</strong></p>
+    
+  
+<div class="alert alert-success">
+	Email</div>
+<p>
+	If you want to send form data to your mailbox, fill this field with your email address.</p>
+<p>
+	you must enable mail configuration on your host.</p>
+<div class="alert alert-success">
+	Description</div>
+<p>
+	This is the description of the form and not using right now.</p>
+<div class="alert alert-success">
+	Form border size</div>
+<p>
+	This option sets the width of an form&#39;s four borders. you can enter a number in pixel or just a number like &#39;2px&#39; or &#39;4&#39; and the default value is 1px.</p>
+<div class="alert alert-success">
+	Form border color</div>
+<p>
+	This is the color of the border.</p>
+<p>
+	It could be a color name like &#39;red&#39; or &#39;blue&#39; or it could be a color code like &#39;#3465ac&#39; or you can click on the grea icon and choose a color from colorpicker dialog.</p>
+<div class="alert alert-success">
+	Form BG color</div>
+<p>
+	This is the background color of the form. It can be a color name like &#39;blue&#39; or &#39;darkblue&#39; or a color code like &#39;#78AD4F&#39; or choose a color from colorpicker dialog.</p>
+<div class="alert alert-success">
+	Form BG gradient</div>
+<p>
+	If you want to use gradient as a background, this is the field you need to use.</p>
+<p>
+	For example if you write &#39;linear-gradient(red, yellow)&#39; value you have a form with background like this.</p>
+<center>
+	<img alt="" src="assets/images/form_bg_gradient.png"></center>
+<p>
+	&nbsp;</p>
+<div class="alert alert-success">
+	Form align</div>
+<p>
+	This option can be used to align the form horizontally. The default value is left.</p>
+<div class="alert alert-success">
+	Form width</div>
+<p>
+	The width property sets the width of a form.</p>
+<p>
+	<strong>NOTE</strong> : The width property does not include padding, borders, or margins; it sets the width of the area inside the padding, border, and margin of the form!</p>
+<p>
+	possible values are number as pixel or number in percent.</p>
+<p>
+	For example &#39;300&#39; , &#39;350px&#39; or &#39;20%&#39;</p>
+<div class="alert alert-success">
+	Form max width</div>
+<p>
+	The max-width property is used to set the maximum width of a form.</p>
+<p>
+	This prevents the value of the width property from becoming larger than max-width.</p>
+<p>
+	This value can be in percent or pixel. like &#39;300&#39; , &#39;300px&#39; or &#39;23%&#39;</p>
+<div class="alert alert-success">
+	Form min width</div>
+<p>
+	he min-width property is used to set the minimum width of a form.</p>
+<p>
+	This prevents the value of the width property from becoming smaller than min-width.</p>
+<p>
+	This value can be in percent or pixel. like &#39;300&#39; , &#39;300px&#39; or &#39;23%&#39;</p>
+<div class="alert alert-success">
+	Top margin</div>
+<p>
+	The top margin property sets the top margin of a form.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like &#39;300&#39; , &#39;300px&#39; or &#39;23%&#39;.</p>
+<p>
+	If you don&#39;t know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this</a></p>
+<div class="alert alert-success">
+	Bottom margin</div>
+<p>
+	The bottom margin property sets the top margin of a form.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like &#39;300&#39; , &#39;300px&#39; or &#39;23%&#39;.</p>
+<p>
+	If you don&#39;t know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this</a></p>
+<div class="alert alert-success">
+	Left margin</div>
+<p>
+	The left margin property sets the top margin of a form.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like &#39;300&#39; , &#39;300px&#39; or &#39;23%&#39;.</p>
+<p>
+	If you don&#39;t know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this</a></p>
+<div class="alert alert-success">
+	Right margin</div>
+<p>
+	The right margin property sets the top margin of a form.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like &#39;300&#39; , &#39;300px&#39; or &#39;23%&#39;.</p>
+<p>
+	If you don&#39;t know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this</a></p>
+   
+</section>
+<section id="row">
+	<div class="page-header"><h3>Row</h3><hr class="notop"></div>
+<p>
+	BSIDE uses Bootstrap&#39;s grid system allows up to 12 columns across the page. For more information on Bootstrap grid system please see <a href="http://getbootstrap.com/css/#grid">Bootstrap grid system</a> .</p>
+<p>
+	Rows are used for creating&nbsp; layouts through a series of&nbsp; columns that house your content. Here&#39;s how the rows components works:</p>
+<p>
+	You can define different number of columns in one row by specifying the weight of each columns in a row.</p>
+<p>
+	Below image shows some example:</p>
+<p>
+	&nbsp;</p>
+<center>
+	<img alt="" src="assets/images/row_column.png"></center>
+<p>
+	&nbsp;</p>
+<p>
+	Sum of the weights of the columns <strong>must</strong> be 12.&nbsp; after specifying the columns weight, you can drag and drop components in each columns and edit that component by clicking the pencil icon on the top right of the component.</p>
+<p>
+	See the image below :</p>
+<p>
+	&nbsp;</p>
+<center>
+	<p>
+		<img alt="" src="assets/images/row_edit_element.png"></p>
+</center>
+<p>
+	We&#39;ll describe each attributes of row component.</p>
+<div class="alert alert-success">
+	<span id="SJL-956-label-label_span_label">Column width</span></div>
+<p>
+	This is the column&#39;s width I have explained above. Default value is &#39;6 6&#39; but you can enter any combination as long as the sum of numbers are 12. For example &#39;6 3 3&#39; or &#39;3 2 5 2&#39; or &#39; 5 5 2&#39; or &#39;4 4 4&#39; and remember to type atleast one space between each number.</p>
+<div class="alert alert-success">
+	<span id="SJL-959-label-label_span_label">Column class</span></div>
+<p>
+	This option is a bootstrap grid system attribute and defines the different page size for creating responsive form. If you don&#39;t know how to use it just don&#39;t change the default value (The default value is &#39;SMALL&#39;).</p>
+<p>
+	For more information about grid system see <a href="http://getbootstrap.com/css/#grid">Bootstrap grid system.</a></p>
+<div class="alert alert-success">
+	Top Margin</div>
+<p>
+	The top margin property sets the top margin of a row.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like &#39;300&#39; , &#39;300px&#39; or &#39;23%&#39;.</p>
+<p>
+	If you don&#39;t know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Bottom Margin</div>
+<p>
+	The bottom margin property sets the top margin of a row.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like &#39;300&#39; , &#39;300px&#39; or &#39;23%&#39;.</p>
+<p>
+	If you don&#39;t know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	<span><span><span><span id="SJL-968-label-label_span_label">Left Margin</span></span></span></span></div>
+<p>
+	The left margin property sets the top margin of a row.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like &#39;300&#39; , &#39;300px&#39; or &#39;23%&#39;.</p>
+<p>
+	If you don&#39;t know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Right Margin</div>
+<p>
+	The right margin property sets the top margin of a row.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like &#39;300&#39; , &#39;300px&#39; or &#39;23%&#39;.</p>
+<p>
+	If you don&#39;t know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<p>
+	<strong>Note: You can NOT use nested row. If you want to do that, add a form as an intermediary.</strong></p>
+
+</section>
+<section id="blank">
+	<div class="page-header"><h3>Blank</h3><hr class="notop"></div>
+<p>
+	Blank component is actually a blank &lt;div&gt;. It adds a &lt;div&gt; section to form but the &lt;div&gt; is not empty and has the word &#39;BLANK&#39; in it .</p>
+<p>
+	If you want to add an empty div to page, use text attribute of the blank and just put a space in it.</p>
+<div class="alert alert-success">
+	Text</div>
+<p>
+	This is the text which appears in the &lt;div&gt; of the blank component. Click on the pencil icon on the left side of the textbox and use WYSWYG editor to edit the text.</p>
+<p>
+	This id the&nbsp; WYSWYG editor:</p>
+<center>
+	<img alt="" src="assets/images/wyswyg.png"></center>
+
+</section>
+<section id="paragraph">
+	<div class="page-header"><h3>paragraph</h3><hr class="notop"></div>
+<p>
+	This component is used to insert a paragraph in form. You can use editor to insert a paragraph with image and everything you need.</p>
+<p>
+	These are the important attributes of the paragraph:</p>
+<div class="alert alert-success">
+	Text</div>
+<p>
+	This is the most important field of this component. Click on the textarea field, the editor will open and you can type whatever you want.</p>
+<div class="alert alert-success">
+	Label align</div>
+<p>
+	This is the alignment of the paragraph. Possible values are 'right', 'left' and 'center'</p>
+<div class="alert alert-success">
+	Text class</div>
+<p>
+	Text class is some predefined color for the text (based on bootstrap color definition).</p>
+<div class="alert alert-success">
+	Color class</div>
+<p>
+	Color class is some predefined background color of the paragraph.</p>
+<div class="alert alert-success">
+	Font</div>
+<p>
+	Specify the font of the paragraph.
+You can enter the name of a font like 'tahoma' or if you are not sure, just leave it blank.</p>
+<div class="alert alert-success">
+	<span id="SJL-249-label-label_span_label">Font size</span></div>
+<p>
+	Size of the paragraph font. Default value is 13px.</p>
+<div class="alert alert-success">
+	Font color</div>
+<p>
+	Color of the text in paragraph. Enter a color name like 'red' , 'yellow' or a color code like '#78FD12' or use colorpicker to choose a color.</p>
+</section>
+<section id="link">
+	<div class="page-header"><h3>Link</h3><hr class="notop"></div>
+<p>
+	This is a simple hyperlink. If you want to add a hyperlink to your form, this is the component you need. It&#39;s very simple to use just click on the component in the toolbar to add it to the form.</p>
+<p>
+	I&#39;ll explain each attribute briefly:</p>
+<div class="alert alert-success">
+	Label</div>
+<p>
+	This is the text of the hyperlink. you can enter text directly in the textfield or use the editor by clicking on the pencil icon of the text box and create custom text.</p>
+<p>
+	&nbsp;</p>
+<div class="alert alert-success">
+	Address</div>
+<p>
+	This is the address of the hyperlink . It Specifies the URL of the page the link goes to.</p>
+<p>
+	&nbsp;</p>
+<div class="alert alert-success">
+	Decoration</div>
+<p>
+	The decoration property specifies the decoration added to text.</p>
+<p>
+	Possible values are &#39;underline&#39; (default value), &#39;overline&#39; or none.</p>
+<p>
+	&nbsp;</p>
+<div class="alert alert-success">
+	Align</div>
+<p>
+	Align of the hyperlink. Possible values are &#39;center&#39; , &#39;left&#39; or &#39;right&#39; or use default value based on your page layout.</p>
+<p>
+	&nbsp;</p>
+<div class="alert alert-success">
+	Label size</div>
+<p>
+	Size of the label in pixel. the default value is 13px.</p>
+
+</section>
+<section id="header">
+	<div class="page-header"><h3>Header</h3><hr class="notop"></div>
+<p>
+	The header component adds a&nbsp; &lt;header&gt; element to the form. Header element represents a container for introductory content or a set of navigational links.</p>
+<p>
+	attributes of the header tag are :</p>
+<div class="alert alert-success">
+	Header</div>
+<p>
+	This is the text of the header. You can input text directly in the textbox or click on the pencil icon on the left side of the textfield and use editor to create custom text.</p>
+<div class="alert alert-success">
+	Header size</div>
+<p>
+	This is the size of the header and could be h1,h2,...,h6.</p>
+<p>
+	h1 header is the biggest one and h6 header is the smallest one.</p>
+<div class="alert alert-success">
+	Label align</div>
+<p>
+	This option specify the alignment of the header and can be right, left or center.</p>
+<div class="alert alert-success">
+	Label weight</div>
+<p>
+	Weight of the header. possible values are &#39;normal&#39; and &#39;bold&#39;</p>
+<div class="alert alert-success">
+	Label style</div>
+<p>
+	Style of the header. Possible values are &#39;normal&#39; and &#39;italic&#39;.</p>
+<div class="alert alert-success">
+	Label font</div>
+<p>
+	Font of the header. Enter the name of the font you want to use for header e.g. &#39;tahoma&#39;.</p>
+<p>
+	If you don&#39;t know any name just leave this field blank.</p>
+<div class="alert alert-success">
+	Label color</div>
+<p>
+	Color of the header. enter a color name like &#39;red&#39; and &#39;black&#39; or a color code like &#39;#34FC12&#39; or use the color picker by clicking on the gear icon.</p>
+
+</section>
+<section id="label">
+	<div class="page-header"><h3>Label</h3><hr class="notop"></div>
+<p>
+	If you want to add a seperate label for any component, This is the right component to use. But in practice you barely need this component since each input component has it's own label.</p>
+<div class="alert alert-success">
+	Label</div>
+<p>
+	<span>Text of the label. you can enter your text here or use the editor to insert custom text.</span></p>
+<div class="alert alert-success">
+	Label align</div>
+<p>
+	<span>Align of the label. Possible values are 'right', 'left' or 'center'.</span></p>
+<div class="alert alert-success">
+	Label display</div>
+<p>
+	<span>Label display could be inline or block. If you don't know the diffrences see <a href="http://www.w3schools.com/cssref/pr_class_display.asp">here.</a></span></p>
+<div class="alert alert-success">
+	Label size</div>
+<p>
+	Label size in pixel. The default value is 13px.</p>
+<div class="alert alert-success">
+	Label weight</div>
+<p>
+	Label weight could be normal or <strong>bold</strong>.</p>
+<div class="alert alert-success">
+	Label style</div>
+<p>
+	Label style could be normal or <i>italic.</i></p>
+<div class="alert alert-success">
+	Label font</div>
+<p>
+	This option specifies the label font. You can enter the name of a font like 'tahoma' or if you are not sure, just leave it blank.</p>
+<div class="alert alert-success">
+	Label color</div>
+<p>
+	The color of the label. enter a color name like 'red' , 'yellow' or a color code like '#78FD12' or use colorpicker to choose a color.</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="textbox">
+	<div class="page-header"><h3>Textbox</h3><hr class="notop"></div>
+<p>
+	Textbox is one of the most important component of every form builder software.</p>
+<p>
+	It can be used to insert name, lastname, address or any information from user.</p>
+<p>
+	Textboxes in BSIDE consists of two parts: a label and an input.</p>
+<p>
+	Label is the caption of the textbox and the input is where user enters the information.</p>
+<p>
+	here are the attributes of a textbox in bside:</p>
+<div class="alert alert-success">
+	Value</div>
+<p>
+	This is the default value of the textbox. When you publish a form, this value will appear in the textbox as default.</p>
+<div class="alert alert-success">
+	Place holder</div>
+<p>
+	The placeholder attribute specifies a short hint that describes the expected value of an input field (e.g. a sample value or a short description of the expected format).</p>
+<p>
+	The short hint is displayed in the input field before the user enters a value.</p>
+<div class="alert alert-success">
+	Name</div>
+<p>
+	he name attribute specifies the name of an &lt;input&gt; element.</p>
+<p>
+	The name attribute is used to reference elements in a JavaScript, or to reference form data after a form is submitted.</p>
+<p>
+	<b>Note:</b> Only form elements with a name attribute will have their values passed when submitting a form.</p>
+<p>
+	<strong>You must fill this attribute in order to get the data when user submit the form.</strong></p>
+<div class="alert alert-success">
+	Has icon?</div>
+<p>
+	specify whether the input has icon or not.</p>
+<div class="alert alert-success">
+	Input icon</div>
+<p>
+	This is the icon you want to show in the input box. Type the name of the icon (font-awsome icon name) or click the gear icon in this field and choose an icon from icon picker.</p>
+<p>
+	Note: The icon will appear in the inputbox if you check the 'Has icon?' property.</p>
+<div class="alert alert-success">
+	Input size</div>
+<p>
+	This is the size of the input box. Possible values are :</p>
+<ul>
+	<li>
+		&nbsp;full-width</li>
+	<li>
+		mini</li>
+	<li>
+		small</li>
+	<li>
+		medium</li>
+	<li>
+		large</li>
+	<li>
+		xlarge</li>
+	<li>
+		xxlarge</li>
+	<li>
+		xxxlarge</li>
+</ul>
+<p>
+	The default value is full-width.</p>
+<div class="alert alert-success">
+	Input color</div>
+<p>
+	This property specifies the text color of the inputbox. Enter a color name like 'red' , 'blue' or a color code like '#23AE45' or just use the colorpicker by clicking on the gear icon.</p>
+<div class="alert alert-success">
+	Input BG color</div>
+<p>
+	Specifies the background color of the input box. Enter a color name like 'red' , 'blue' or a color code like '#23AE45' or just use the colorpicker by clicking on the gear icon.</p>
+<div class="alert alert-success">
+	Input BG gradient</div>
+<p>
+	If you want to use a gradient color as background, leave 'input BG color' blank and fill this attribute with appropriate value such as : <a href="http://www.w3schools.com/css/css3_gradients.asp"><span style="color:brown"><span style="color:red"><span style="color:mediumblue">linear-gradient(red, yellow).</span></span></span></a></p>
+<div class="alert alert-success">
+	Label</div>
+<p>
+	This is the caption of the textbox.</p>
+<div class="alert alert-success">
+	Has Label?</div>
+<p>
+	This option specifies if the textbox need caption or not. default value is unchecked.</p>
+<div class="alert alert-success">
+	Seperator</div>
+<p>
+	Seperator of the caption of the textbox. Default value is ':'</p>
+<div class="alert alert-success">
+	Required?</div>
+<p>
+	This option specifies if the field is required or not. The default value is required.</p>
+<div class="alert alert-success">
+	Symbol required?</div>
+<p>
+	Symbol of the required field is * in default. But you can change it to whatever you want.</p>
+<div class="alert alert-success">
+	Label width</div>
+<p>
+	With 'Label width' you can specify the size ratio between label and inputbox. For example if you set this value to 2, it means that 2 out of 12 of the whole textbox space is for label and 10/12 of the rest is for inputbox.</p>
+<p>
+	If you set this value to zero, the inputbox occupy the whole space and the label positioned at top of it.</p>
+<div class="alert alert-success">
+	Label display</div>
+<p>
+	This option could be inline or block. If you want to put the label at top of the inputbox, set this value to block.</p>
+<div class="alert alert-success">
+	Label align</div>
+<p>
+	Align of the label. Possible values are left , right or center.</p>
+<div class="alert alert-success">
+	Label size</div>
+<p>
+	Size of the label in pixel. The default value is 13 pixel.</p>
+<div class="alert alert-success">
+	Label weight</div>
+<p>
+	Label weight can be normal or <strong>bold</strong>.</p>
+<div class="alert alert-success">
+	Label style</div>
+<p>
+	Label style can be normal or <i>italic</i>.</p>
+<div class="alert alert-success">
+	Label font</div>
+<p>
+	Enter the name of the font for label like 'tahoma' or just leave it blank if you don't know any name.</p>
+<div class="alert alert-success">
+	Label color</div>
+<p>
+	The color of the label. enter a color name like 'red' , 'yellow' or a color code like '#78FD12' or use colorpicker to choose a color.</span></span></span></span></span></span></span></span></span></em></span></span></span></span></span></span></span></p>
+<div class="alert alert-success">
+	Top Marginspan</div>
+<p>
+	The top margin property sets the top margin of a textbox.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Bottom Margin</div>
+<p>
+	The bottom margin property sets the top margin of a textbox.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Left Margin</div>
+<p>
+	The left margin property sets the top margin of a textbox.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Right Margin</div>
+<p>
+	The right margin property sets the top margin of a textbox.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+
+</section>
+<section id="textarea">
+	<div class="page-header"><h3>Textarea</h3><hr class="notop"></div>
+<p>
+	The Textarea component defines a multi-line text input control. A text area can hold an unlimited number of characters, and the text renders in a fixed-width font. The size of a text area can be specified by the cols and rows attributes.</p>
+<p>
+	To add a textarea just click on the component or if you want to add it to hbox, drag an drop it into row.</p>
+<p>
+	We'll describe each attributes below:</p>
+<div class="alert alert-success">
+	Value</div>
+<p>
+	This is the default value you want to show to user.</p>
+<div class="alert alert-success">
+	Place holder</div>
+<p>
+	The placeholder attribute specifies a short hint that describes the expected value of an input field (e.g. a sample value or a short description of the expected format).</p>
+<p>
+	The short hint is displayed in the input field before the user enters a value.</p>
+<div class="alert alert-success">
+	Name</div>
+<p>
+	This is the name of the textarea and if you want to submit the value of textarea, you <strong>must</strong> fill this field.</p>
+<div class="alert alert-success">
+	Input size</div>
+<p>
+	The size of the input box in the textarea component. Possible values are:</p>
+<ul>
+	<li>
+		full width</li>
+	<li>
+		mini</li>
+	<li>
+		small</li>
+	<li>
+		medium</li>
+	<li>
+		large</li>
+	<li>
+		xlarge</li>
+	<li>
+		xxlarge</li>
+	<li>
+		xxxlarge</li>
+</ul>
+<p>
+	The default value is full width.</p>
+<div class="alert alert-success">
+	Input color</div>
+<p>
+	This is the text color of the input box. You can input a color name like 'red' , 'white' or a color code like '#34FFDD' or choose a color from colorpicker.</p>
+<div class="alert alert-success">
+	Input BG color</div>
+<p>
+	Specifies the background color of the input box. Enter a color name like 'red' , 'blue' or a color code like '#23AE45' or just use the colorpicker by clicking on the gear icon.</p>
+<div class="alert alert-success">
+	Input BG gradient</div>
+<p>
+	If you want to use a gradient color as background, leave 'input BG color' blank and fill this attribute with appropriate value such as : <a href="http://www.w3schools.com/css/css3_gradients.asp"><span style="color:brown"><span style="color:red"><span style="color:mediumblue">linear-gradient(red, yellow).</span></span></span></a></p>
+<div class="alert alert-success">
+	Number of rows</div>
+<p>
+	The rows attribute specifies the visible height of a text area, in lines. It can be a number like 1 , 3 , 5 , 2 .... and the default value is 3.</p>
+<div class="alert alert-success">
+	Label</div>
+<p>
+	This is the caption of the textarea.</p>
+<div class="alert alert-success">
+	Has label?</div>
+<p>
+	This option specifies if the textbox need caption or not. default value is unchecked.</p>
+<div class="alert alert-success">
+	Seperator</div>
+<p>
+	Seperator of the caption of the textbox. Default value is ':'</p>
+<div class="alert alert-success">
+	Required?</div>
+<p>
+	This option specifies if the field is required or not. The default value is required.</p>
+<div class="alert alert-success">
+	Required symbol</div>
+<p>
+	Symbol of the required field is * in default. But you can change it to whatever you want.</p>
+<div class="alert alert-success">
+	Label width</div>
+<p>
+	With 'Label width' you can specify the size ratio between label and inputbox. For example if you set this value to 2, it means that 2 out of 12 of the whole textbox space is for label and 10/12 of the rest is for inputbox.</p>
+<p>
+	If you set this value to zero, the inputbox occupy the whole space and the label positioned at top of it.</p>
+<p>
+	The default value is 2.</p>
+<div class="alert alert-success">
+	Label display</div>
+<p>
+	This option could be inline or block. If you want to put the label at top of the inputbox, set this value to block.</p>
+<div class="alert alert-success">
+	Label align</div>
+<p>
+	Align of the label. Possible values are left , right or center.</p>
+<div class="alert alert-success">
+	Label size</div>
+<p>
+	Size of the label in pixel. The default value is 13 pixel.</p>
+<div class="alert alert-success">
+	Label weight</div>
+<p>
+	Label weight can be normal or <strong>bold</strong>.</p>
+<div class="alert alert-success">
+	Label style</div>
+<p>
+	Label style can be normal or <i>italic</i>.</p>
+<div class="alert alert-success">
+	Label font</div>
+<p>
+	Enter the name of the font for label like 'tahoma' or just leave it blank if you don't know any name.</p>
+<div class="alert alert-success">
+	Label color</div>
+<p>
+	The color of the label. enter a color name like 'red' , 'yellow' or a color code like '#78FD12' or use colorpicker to choose a color.</p>
+<div class="alert alert-success">
+	Top margin</div>
+<p>
+	The top margin property sets the top margin of a textarea.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Bottom margin</div>
+<p>
+	The bottom margin property sets the top margin of a textarea.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Left margin</div>
+<p>
+	The left margin property sets the top margin of a textarea.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Right Margin</div>
+<p>
+	The right margin property sets the top margin of a textarea.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+</section>
+<section id="password">
+	<div class="page-header"><h3>Password</h3><hr class="notop"></div>
+<p>
+	The Password component represents an HTML &lt;input&gt; element with type="password".</p>
+<p>
+	To add password component to the form just click on it in the toolbar menu.</p>
+<p>
+	Below is the list of attributes for password component.</p>
+<div class="alert alert-success">
+	Value</div>
+<p>
+	This is the default value you want to show to user.</p>
+<div class="alert alert-success">
+	Place holder</div>
+<p>
+	The placeholder attribute specifies a short hint that describes the expected value of an input field (e.g. a sample value or a short description of the expected format).</p>
+<p>
+	The short hint is displayed in the input field before the user enters a value.</p>
+<div class="alert alert-success">
+	Has icon?</div>
+<p>
+	specify whether the input has icon or not.</p>
+<div class="alert alert-success">
+	Name</div>
+<p>
+	This is the name of the password and if you want to submit the value of password component, you <strong>must</strong> fill this field.</p>
+<div class="alert alert-success">
+	Input icon</div>
+<p>
+	This is the icon you want to show in the input box. Type the name of the icon (font-awsome icon name) or click the gear icon in this field and choose an icon from icon picker.</p>
+<p>
+	Note: The icon will appear in the inputbox if you check the 'Has icon?' property.</p>
+<div class="alert alert-success">
+	Input size</div>
+<p>
+	This is the size of the input box. Possible values are :</p>
+<ul>
+	<li>
+		&nbsp;full-width</li>
+	<li>
+		mini</li>
+	<li>
+		small</li>
+	<li>
+		medium</li>
+	<li>
+		large</li>
+	<li>
+		xlarge</li>
+	<li>
+		xxlarge</li>
+	<li>
+		xxxlarge</li>
+</ul>
+<p>
+	The default value is full-width.</p>
+<div class="alert alert-success">
+	Input color</div>
+<p>
+	This property specifies the text color of the inputbox. Enter a color name like 'red' , 'blue' or a color code like '#23AE45' or just use the colorpicker by clicking on the gear icon.</p>
+<div class="alert alert-success">
+	Input BG color</div>
+<p>
+	Specifies the background color of the input box. Enter a color name like 'red' , 'blue' or a color code like '#23AE45' or just use the colorpicker by clicking on the gear icon.</p>
+<div class="alert alert-success">
+	Input gradient</div>
+<p>
+	If you want to use a gradient color as background, leave 'input BG color' blank and fill this attribute with appropriate value such as : <a href="http://www.w3schools.com/css/css3_gradients.asp"><span style="color:brown"><span style="color:red"><span style="color:mediumblue">linear-gradient(red, yellow).</span></span></span></a></p>
+<div class="alert alert-success">
+	Label</div>
+<p>
+	This is the caption of the password component.</p>
+<div class="alert alert-success">
+	Has label</div>
+<p>
+	This option specifies if the password component need caption or not. default value is unchecked.</p>
+<div class="alert alert-success">
+	Seperator</div>
+<p>
+	Seperator of the caption of the password component. Default value is ':'</p>
+<div class="alert alert-success">
+	Required?</div>
+<p>
+	This option specifies if the field is required or not. The default value is required.</p>
+<div class="alert alert-success">
+	Symbol required</div>
+<p>
+	Symbol of the required field is * in default. But you can change it to whatever you want.</p>
+<div class="alert alert-success">
+	Label width</div>
+<p>
+	With 'Label width' you can specify the size ratio between label and inputbox. For example if you set this value to 2, it means that 2 out of 12 of the whole textbox space is for label and 10/12 of the rest is for inputbox.</p>
+<p>
+	If you set this value to zero, the inputbox occupy the whole space and the label positioned at top of it.</p>
+<div class="alert alert-success">
+	Label display</div>
+<p>
+	This option could be inline or block. If you want to put the label at top of the inputbox, set this value to block.</p>
+<div class="alert alert-success">
+	Label align</div>
+<p>
+	Align of the label. Possible values are left , right or center.</p>
+<div class="alert alert-success">
+	Label size</div>
+<p>
+	Size of the label in pixel. The default value is 13 pixel.</p>
+<div class="alert alert-success">
+	Label weight</div>
+<p>
+	Label weight can be normal or <strong>bold</strong>.</p>
+<div class="alert alert-success">
+	Label style</div>
+<p>
+	Label style can be normal or <i>italic</i>.</p>
+<div class="alert alert-success">
+	Label font</div>
+<p>
+	Enter the name of the font for label like 'tahoma' or just leave it blank if you don't know any name.</p>
+<div class="alert alert-success">
+	Label color</div>
+<p>
+	The color of the label. enter a color name like 'red' , 'yellow' or a color code like '#78FD12' or use colorpicker to choose a color.</p>
+<div class="alert alert-success">
+	Top margin</div>
+<p>
+	The top margin property sets the top margin of a password.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Bottom margin</div>
+<p>
+	The bottom margin property sets the top margin of a password.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Left margin</div>
+<p>
+	The left margin property sets the top margin of a password.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Right margin</div>
+<p>
+	The right margin property sets the top margin of a password.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="number">
+	<div class="page-header"><h3>Number</h3><hr class="notop"></div>
+<p>
+	The Number component&nbsp; is used for input fields that should contain a numeric value.</p>
+<p>
+	These are the attributes of the number component:</p>
+<p>
+	&nbsp;</p>
+<div class="alert alert-success">
+	Value</div>
+<p>
+	This is the default value you want to show to user.</p>
+<div class="alert alert-success">
+	Place holder</div>
+<p>
+	The placeholder attribute specifies a short hint that describes the expected value of an input field (e.g. a sample value or a short description of the expected format).</p>
+<p>
+	The short hint is displayed in the input field before the user enters a value.</p>
+<div class="alert alert-success">
+	Has icon?</div>
+<p>
+	specify whether the input has icon or not.</p>
+<div class="alert alert-success">
+	Name</div>
+<p>
+	This is the name of the number and if you want to submit the value of number, you <strong>must</strong> fill this field.</p>
+<div class="alert alert-success">
+	Input icon</div>
+<p>
+	This is the icon you want to show in the input box. Type the name of the icon (font-awsome icon name) or click the gear icon in this field and choose an icon from icon picker.</p>
+<p>
+	Note: The icon will appear in the inputbox if you check the 'Has icon?' property.</p>
+<div class="alert alert-success">
+	Input size</div>
+<p>
+	This is the size of the input box. Possible values are :</p>
+<ul>
+	<li>
+		&nbsp;full-width</li>
+	<li>
+		mini</li>
+	<li>
+		small</li>
+	<li>
+		medium</li>
+	<li>
+		large</li>
+	<li>
+		xlarge</li>
+	<li>
+		xxlarge</li>
+	<li>
+		xxxlarge</li>
+</ul>
+<p>
+	The default value is full-width.</p>
+<div class="alert alert-success">
+	Input color</div>
+<p>
+	This property specifies the text color of the inputbox. Enter a color name like 'red' , 'blue' or a color code like '#23AE45' or just use the colorpicker by clicking on the gear icon.</p>
+<div class="alert alert-success">
+	Input BG color</div>
+<p>
+	Specifies the background color of the input box. Enter a color name like 'red' , 'blue' or a color code like '#23AE45' or just use the colorpicker by clicking on the gear icon.</p>
+<div class="alert alert-success">
+	Input BG gradient</div>
+<p>
+	If you want to use a gradient color as background, leave 'input BG color' blank and fill this attribute with appropriate value such as : <a href="http://www.w3schools.com/css/css3_gradients.asp"><span style="color:brown"><span style="color:red"><span style="color:mediumblue">linear-gradient(red, yellow).</span></span></span></a></p>
+<div class="alert alert-success">
+	Label</div>
+<p>
+	This is the caption of the number component.</p>
+<div class="alert alert-success">
+	Has label?</div>
+<p>
+	This option specifies if the number component need caption or not. default value is unchecked.</p>
+<div class="alert alert-success">
+	Seperator</div>
+<p>
+	Seperator of the caption of the number component. Default value is ':'</p>
+<div class="alert alert-success">
+	Required?</div>
+<p>
+	This option specifies if the field is required or not. The default value is required.</p>
+<div class="alert alert-success">
+	Symbol required</div>
+<p>
+	Symbol of the required field is * in default. But you can change it to whatever you want.</p>
+<div class="alert alert-success">
+	Label width</div>
+<p>
+	With 'Label width' you can specify the size ratio between label and inputbox. For example if you set this value to 2, it means that 2 out of 12 of the whole textbox space is for label and 10/12 of the rest is for inputbox.</p>
+<p>
+	If you set this value to zero, the inputbox occupy the whole space and the label positioned at top of it.</p>
+<div class="alert alert-success">
+	Label display</div>
+<p>
+	This option could be inline or block. If you want to put the label at top of the inputbox, set this value to block.</p>
+<div class="alert alert-success">
+	Label align</div>
+<p>
+	Align of the label. Possible values are left , right or center.</p>
+<div class="alert alert-success">
+	Label size</div>
+<p>
+	Size of the label in pixel. The default value is 13 pixel.</p>
+<div class="alert alert-success">
+	Label weight</div>
+<p>
+	Label weight can be normal or <strong>bold</strong>.</p>
+<div class="alert alert-success">
+	Label style</div>
+<p>
+	Label style can be normal or <i>italic</i>.</p>
+<div class="alert alert-success">
+	Label font</div>
+<p>
+	Enter the name of the font for label like 'tahoma' or just leave it blank if you don't know any name.</p>
+<div class="alert alert-success">
+	Label color</div>
+<p>
+	The color of the label. enter a color name like 'red' , 'yellow' or a color code like '#78FD12' or use colorpicker to choose a color.</p>
+<div class="alert alert-success">
+	Top margin</div>
+<p>
+	The top margin property sets the top margin of a number.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Bottom margin</div>
+<p>
+	The bottom margin property sets the top margin of a number.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Left margin</div>
+<p>
+	The left margin property sets the top margin of a number.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Right margin</div>
+<p>
+	The right margin property sets the top margin of a number.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="email">
+    <div class="page-header"><h3>Email</h3><hr class="notop"></div>
+	<p>
+	The Email component&nbsp; is used for input fields that should contain an email value.</p>
+<p>
+	All the attributes of this component is just like the <a href="#textbox" style="text-decoration:underline;">Textbox</a> component.</p>
+
+</section>
+<section id="radiobox">
+		<div class="page-header"><h3>Radiobox</h3><hr class="notop"></div>
+<p>
+	Radiobox let a user select ONE of a limited number of choices.</p>
+<p>
+	You can add radiobox component horizontally and vertically. To add multiple radiobox horizontally, after adding radiobox component to the form, just click 'Add New' button in the toolbar. These are the different layouts of the radiobox.</p>
+<p>
+	<img src="assets/images/radiobox_horizontal.png" alt=""></p>
+<p>
+	Or vertically like this one:</p>
+<p>
+	<img src="assets/images/radiobox_vertical.png" alt=""></p>
+<p>
+	These are the important attributes of radiobox:</p>
+<div class="alert alert-success">
+	Label</div>
+<p>
+	Label of the radiobox. You can use editor to enter custom text.</p>
+<div class="alert alert-success">
+	Default check?</div>
+<p>
+	The default value of radiobox. (default value is not checked).</p>
+<div class="alert alert-success">
+	Name</div>
+<p>
+	Name of the radiobox. You must fill this field if you want to submit the value of the radiobox.</p>
+<p>
+	If you want to put multiple radiobox in one group, use the same name for all the radiobox in one group.</p>
+<div class="alert alert-success">
+	Value</div>
+<p>
+	This field is the result of the form submit.</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="checkbox">
+	<div class="page-header"><h3>Checkbox</h3><hr class="notop"></div>
+<p>
+	The checkbox componet is a boolean attribute. This component is exactly like radiobox but you can select multiple checkbox in one group while in radiobox group you can select only one of the options.</p>
+<p>
+	Attributes of the checkbox component is same as <a href="#radiobox">radiobox combonent</a>.</p>
+</section>
+<section id="combobox">
+	<div class="page-header"><h3>Combobox</h3><hr class="notop"></div>
+<p>
+	The Combobox component is used to create a drop-down list. You can select one of the several options in the list.</p>
+<p>
+	The store of the combobox component is a little tricky. I'll explain it in the attributes description.</p>
+<p>
+	This is a combobox with three options : United States, United Kingdom and United Arab Emirates</p>
+<p>
+	<img src="assets/images/combobox_store.png" alt=""></p>
+<p>
+	Users can select one of the above options.</p>
+<p>
+	Each option of the combobox has a name and a value. For example for option one the name is 'United States' and it's value is 'US'. When user selects this option and submit the form, the value 'US' is sent.&nbsp; We'll explain more about this in the attributes section.</p>
+<p>
+	&nbsp;</p>
+<div class="alert alert-success">
+	Value</div>
+<p>
+	This is the default value of the combobox. If the user doesn't change it, this is the value that sent when user submit the form. For example in the above figure the default value is the first option of the combobox which is 'US'.</p>
+<div class="alert alert-success">
+	Label</div>
+<p>
+	Caption of the combobox.</p>
+<div class="alert alert-success">
+	Name</div>
+<p>
+	Name attribute of the combobox. If you want to submit the value of the combobox, you MUST fill this field.</p>
+<div class="alert alert-success">
+	Seperator</div>
+<p>
+	The seperator character of the caption and inputbox. The default value is ':' .</p>
+<div class="alert alert-success">
+	Input Items</div>
+<p>
+	This is the most important attributes of a combobox and you have to be carful with this field.</p>
+<p>
+	this field is the key-value pair in JSON format to specifies the options in combobox.</p>
+<p>
+	For example in the above sample, This is what I've entered in this field.</p>
+<pre class="prettyprint lang-js linenums"><ol class="linenums"><li class="L0"><span class="pun">[</span></li><li class="L1"><span class="pln">    </span><span class="pun">{</span></li><li class="L2"><span class="pln">        </span><span class="str">"key"</span><span class="pun">:</span><span class="str">"United States"</span><span class="pun">,</span></li><li class="L3"><span class="pln">        </span><span class="str">"value"</span><span class="pun">:</span><span class="str">"US"</span></li><li class="L4"><span class="pln">    </span><span class="pun">},{</span></li><li class="L5"><span class="pln">        </span><span class="str">"key"</span><span class="pun">:</span><span class="str">"United Kingdom"</span><span class="pun">,</span></li><li class="L6"><span class="pln">        </span><span class="str">"value"</span><span class="pun">:</span><span class="str">"UK"</span></li><li class="L7"><span class="pln">    </span><span class="pun">},{</span></li><li class="L8"><span class="pln">        </span><span class="str">"key"</span><span class="pun">:</span><span class="str">"United Arab Emirates"</span><span class="pun">,</span></li><li class="L9"><span class="pln">        </span><span class="str">"value"</span><span class="pun">:</span><span class="str">"UAE"</span></li><li class="L0"><span class="pln">    </span><span class="pun">}</span></li><li class="L1"><span class="pun">]</span></li></ol></pre>
+<p>
+	Or just in one line:</p>
+<pre class="prettyprint lang-js linenums"><ol class="linenums"><li class="L0"><span class="pun">[{</span><span class="str">"key"</span><span class="pun">:</span><span class="str">"United States"</span><span class="pun">,</span><span class="str">"value"</span><span class="pun">:</span><span class="str">"US"</span><span class="pun">},{</span><span class="str">"key"</span><span class="pun">:</span><span class="str">"United Kingdom"</span><span class="pun">,</span><span class="str">"value"</span><span class="pun">:</span><span class="str">"UK"</span><span class="pun">},{</span><span class="str">"key"</span><span class="pun">:</span><span class="str">"United Arab Emirates"</span><span class="pun">,</span><span class="str">"value"</span><span class="pun">:</span><span class="str">"UAE"</span><span class="pun">}]</span></li></ol></pre>
+<p>
+	Add as many Key-Value pair as&nbsp; you like to this array. but remember to keep the structure the same way as above.</p>
+<div class="alert alert-success">
+	Label Display</div>
+<p>
+	Possible values for this attribute is 'inline' or 'block'. If you want to put the caption at top of the inputbox, you have to set this to block. The default value is inline.</p>
+<div class="alert alert-success">
+	Input size</div>
+<p>
+	This is the size of the input box. Possible values are :</p>
+<ul>
+	<li>
+		&nbsp;full-width</li>
+	<li>
+		mini</li>
+	<li>
+		small</li>
+	<li>
+		medium</li>
+	<li>
+		large</li>
+	<li>
+		xlarge</li>
+	<li>
+		xxlarge</li>
+	<li>
+		xxxlarge</li>
+</ul>
+<p>
+	The default value is full-width.</p>
+<div class="alert alert-success">
+	Label Width</div>
+<p>
+	With 'Label width' you can specify the size ratio between label and inputbox. For example if you set this value to 2, it means that 2 out of 12 of the whole textbox space is for label and 10/12 of the rest is for inputbox.</p>
+<p>
+	If you set this value to zero, the inputbox occupy the whole space and the label positioned at top of it.</p>
+<div class="alert alert-success">
+	Label size</div>
+<p>
+	Size of the label in pixel. The default value is 13 pixel.</p>
+<div class="alert alert-success">
+	Label align</div>
+<p>
+	Align of the label. Possible values are left , right or center.</p>
+<div class="alert alert-success">
+	Font width</div>
+<p>
+	Label weight can be normal or <strong>bold</strong>.</p>
+<div class="alert alert-success">
+	Label style</div>
+<p>
+	Label style can be normal or <i>italic</i>.</p>
+<div class="alert alert-success">
+	Label font</div>
+<p>
+	Enter the name of the font for label like 'tahoma' or just leave it blank if you don't know any name.</p>
+<div class="alert alert-success">
+	Label color</div>
+<p>
+	The color of the label. enter a color name like 'red' , 'yellow' or a color code like '#78FD12' or use colorpicker to choose a color.</p>
+</section>
+<section id="fieldset">
+	<div class="page-header"><h3>Fieldset</h3><hr class="notop"></div>
+<p>
+	The fieldset component is used to group related elements in a form. This is a very simple element with easy attributes. It consists of a title and a horizontal line below it.</p>
+<p>
+	Attributes of the fieldset are common and like other components.</p>
+<div class="alert alert-success">
+	Title</div>
+<p>
+	This is the title of the fieldset. The default value is 'fieldset'. You can use HTML tags to customize the value.</p>
+<p>
+	Other attributes of the fieldset are just like other components. See <a href="#textbox">Textbox</a> attribs for more info.</p>
+</section>
+<section id="sectionbreaker">
+	<div class="page-header"><h3>Sectionbreaker</h3><hr class="notop"></div>
+<p>
+	Sectionbreaker is actually a single or double horizontal line to seperate fields in forms.</p>
+<p>
+	These are the attributes of the sectionbreaker:</p>
+<div class="alert alert-success">
+	Input Size</div>
+<p>
+	This is the length of the line. Possible values are:</p>
+<ul>
+	<li>
+		&nbsp;full-width</li>
+	<li>
+		mini</li>
+	<li>
+		small</li>
+	<li>
+		medium</li>
+	<li>
+		large</li>
+	<li>
+		xlarge</li>
+	<li>
+		xxlarge</li>
+	<li>
+		xxxlarge</li>
+</ul>
+<p>
+	Default value is large.</p>
+<div class="alert alert-success">
+	Line width</div>
+<p>
+	This is the margin value around the line. Possible value is a number between 2 and 32. The default value is 12.</p>
+<div class="alert alert-success">
+	Double line?</div>
+<p>
+	This is a single line or double line checkbox. If you want a single line sectionbreaker, just uncheck this value. The default value is double line.</p>
+</section>
+<section id="button">
+	<div class="page-header"><h3>Button</h3><hr class="notop"></div>
+<p>
+	The button component defines a clickable button. It's necessary in a form to have button to submit form's values.</p>
+<p>
+	If you want to do something other than submitting form with buttons, you have to write your own action for it.</p>
+<p>
+	We have to type of button in web forms:</p>
+<p>
+	1- The button which submit a form (submit button)</p>
+<p>
+	2- The button which run a execute a javascript code on click event.</p>
+<p>
+	Bside supports both of these buttons but for the second type, you have to write your own javascript code.</p>
+<p>
+	You can have more than one button in one forms with different actions.</p>
+<p>
+	here are some important attributes of button componenet:</p>
+<div class="alert alert-success">
+	Text</div>
+<p>
+	Text of the button. You can use the editor to customize your button caption.</p>
+<div class="alert alert-success">
+	Name</div>
+<p>
+	Name of the button used to submit the button value.</p>
+<p>
+	If you have multiple button in one form you can use this value to specify which button clicked to submit the form.</p>
+<div class="alert alert-success">
+	Value</div>
+<p>
+	value of the button.</p>
+<div class="alert alert-success">
+	Button type</div>
+<p>
+	This value can be submit or just button. If you want to submit the form, change this value to submit and if you want to write your own javascript code, you can use button or submit.</p>
+<div class="alert alert-success">
+	Has icon?</div>
+<p>
+	Specifies if button has icon or not.</p>
+<div class="alert alert-success">
+	Icon</div>
+<p>
+	Icon of the button( use the gear icon on the left to choose a font-awsome icon).</p>
+<div class="alert alert-success">
+	Button color</div>
+<p>
+	This is the color of the button. You can enter a color name like 'red', 'blue' or a color code like '#34FDAB' or choose a color from colorpicker.</p>
+<div class="alert alert-success">
+	Button color order</div>
+<p>
+	The color of the border of the button. You can enter a color name like 'red', 'blue' or a color code like '#34FDAB' or choose a color from colorpicker.</p>
+<div class="alert alert-success">
+	Display</div>
+<p>
+	Possible values for this field is inline and block. block value fill it's parent while inline value wrap it's content.</p>
+<p>
+	<center><img src="assets/images/button_display.png" alt=""></center></p>
+<div class="alert alert-success">
+	Style</div>
+<p>
+	Some bootstrap style for button including: warning, primary, danger, info and etc</p>
+<div class="alert alert-success">
+	Button size</div>
+<p>
+	This is the size of the button, Possible values are :</p>
+<ul>
+	<li>
+		small</li>
+	<li>
+		extra small</li>
+	<li>
+		large</li>
+	<li>
+		default</li>
+</ul>
+<p>
+	Default value is medium size.</p>
+<div class="alert alert-success">
+	Button align</div>
+<p>
+	Alignment of the button in it's parent. Possible values are left, right, center and default.</p>
+<p>
+	The default value specified based on the page layout.</p>
+</section>
+<section id="slider">
+	<div class="page-header"><h3>Slider</h3><hr class="notop"></div>
+<p>
+	Slider component is a HTML5 component. So works only in browsers which supports HTML5.</p>
+<p>
+	Some importants attributes of slider components are:</p>
+<div class="alert alert-success">
+	Value</div>
+<p>
+	Default value of slider when appears in forms.</p>
+<div class="alert alert-success">
+	Name</div>
+<p>
+	Name of the slider to submit it's value.</p>
+<div class="alert alert-success">
+	Min</div>
+<p>
+	Minimum value of the slider (default is 0).</p>
+<div class="alert alert-success">
+	Max</div>
+<p>
+	Maximum value of the slider (default value is 100).</p>
+<div class="alert alert-success">
+	Step</div>
+<p>
+	step value of the slider (default value is 1).</p>
+<p>
+	For example if min value is 0 and max value is 20 and step is 2 for a slider , then the possible values of the slider are: 0,2,4,6,8,10,12,14,16,18,20</p>
+<div class="alert alert-success">
+	Width</div>
+<p>
+	Width of the slider. you can use a fix value like 150 or 300px or use a percent value of its parent like 20%</p>
+<div class="alert alert-success">
+	Top margin</div>
+<p>
+	The top margin property sets the top margin of a slider.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Right margin</div>
+<p>
+	The right margin property sets the top margin of a slider.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Left margin</div>
+<p>
+	The left margin property sets the top margin of a slider.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Bottom margin</div>
+<p>
+	The bottom margin property sets the top margin of a slider.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+</section>
+<section id="rating">
+	<div class="page-header"><h3>Rating</h3><hr class="notop"></div>
+<p>
+	Star ratings are one of those classic UX patterns that everyone has tinkered with at one time or another. Just click on the rating component to add it to the form.</p>
+<p>
+	These are some important properties of star rating component:</p>
+<div class="alert alert-success">
+	Name</div>
+<p>
+	Name of the component. If you want to submit the form and get the result of the rating, you must fill this field.</p>
+<div class="alert alert-success">
+	Rating size</div>
+<p>
+	This option specifies the size of the stars. Possible values are:</p>
+<ul>
+	<li>
+		Extra small</li>
+	<li>
+		small</li>
+	<li>
+		medium</li>
+	<li>
+		large</li>
+	<li>
+		Extra large</li>
+</ul>
+<p>
+	The default value is extra small.</p>
+<p>
+	These are defferent size of rating component:</p>
+<p>
+	&nbsp;</p>
+<center>
+	<img src="assets/images/rating_size.png" alt=""></center>
+<p>
+	&nbsp;</p>
+<div class="alert alert-success">
+	Text</div>
+<p>
+	The caption of the rating component. The default value is 'Rating : ' . You can use text editor to customize your caption.</p>
+<div class="alert alert-success">
+	Has text?</div>
+<p>
+	Specifies whether the rating component should have the caption or not.</p>
+<div class="alert alert-success">
+	Font color</div>
+<p>
+	color of the caption of the rating component. You can enter color name like 'red', 'blue' or color code like '#1287CA' or use colorpicker and choose one.</p>
+<p>
+	&nbsp;</p>
+</section>
+<section id="fileupload">
+	<div class="page-header"><h3>Fileupload</h3><hr class="notop"></div>
+<p>
+	Fileupload component helps user to upload her/his file through a form.</p>
+<p>
+	This is a very simple component. The only properties you have to fill is the 'Name' property if you want to get the file when user submit the form.</p>
+</section>
+<section id="image">
+	<div class="page-header"><h3>Image</h3><hr class="notop"></div>
+<p>
+	The Image component defines an image in a form. This is a very simple component. All you have to do is to add an image component to the form and set it's properties.</p>
+<p>
+	below is a list of properties of image component:</p>
+<div class="alert alert-success">
+	Source</div>
+<p>
+	Specifies the URL of the image. It could be relative or absolute. Absolute URL like http://www.example.com/images/image.png and relative like ./images/image.png</p>
+<p>
+	&nbsp;</p>
+<div class="alert alert-success">
+	Alt</div>
+<p>
+	Specifies an alternate text for an image</p>
+<div class="alert alert-success">
+	Width</div>
+<p>
+	Specifies the width of an image</p>
+<div class="alert alert-success">
+	Height</div>
+<p>
+	Specifies the Height of an image</p>
+<div class="alert alert-success">
+	Shape</div>
+<p>
+	specifies the border type of the image. Possible values are rounded,circle,thumbnail and none.</p>
+<p>
+	&nbsp;</p>
+<center>
+	<img src="assets/images/image_shape.png" alt=""></center>
+<p>
+	&nbsp;</p>
+<div class="alert alert-success">
+	Image Align</div>
+<p>
+	Specifies the alignment of an image according to surrounding elements</p>
+<div class="alert alert-success">
+	Top margin</div>
+<p>
+	The top margin property sets the top margin of a image.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Bottom Margin</div>
+<p>
+	The bottom margin property sets the top margin of a image.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Right Margin</div>
+<p>
+	The right margin property sets the top margin of a image.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+<div class="alert alert-success">
+	Left margin</div>
+<p>
+	The left margin property sets the top margin of a image.</p>
+<p>
+	you can type in the textbox or use the slider below the box to set the margin.</p>
+<p>
+	This value can be in percent or pixel. like '300' , '300px' or '23%'.</p>
+<p>
+	If you don't know what margin is, read <a href="http://www.w3schools.com/css/css_margin.asp">this.</a></p>
+</section>
+<section id="export_output">
+	<div class="page-header"><h3>Export Output</h3><hr class="notop"></div>
+<p>
+	In BSIDE, we have four kinds of outputs. like this:</p>
+<p>
+	<img src="assets/images/export_output.png" alt=""><br>
+	The Export button will create HTML output of the form but it is useless without css files, so you must copy the css folder wherever you want to use the html content.</p>
+<p>
+	Another type of output is 'Export Component HTML'. You can export the HTML code of each element by selecting it (just click on the element) and then pressing this button.</p>
+<p>
+	If you need a whole package of the form including font-awsome and css files to upload it directly on the server, then 'download zip package' is good enough for you. To use this button you have to setup BSIDE on a php server (Host or something ) with a zlib enabled library on it.</p>
+<p>
+	The last type of output is 'Export JSON' output. This output is mostly for developers who want to store the form structure in the database and restore it later. You can restore a form using it's json by calling load_from_json function and pass the JSON as parameter and get the HTML code of the form. Read more about this in <a href="#for_developers">developers </a>section.</p>
+</section>
+
+<section id="for_developers">
+	<div class="page-header"><h3>For Developers</h3><hr class="notop"></div>
+<p>
+	In BSIDE, we have three function you can call and get the appropriate output:</p>
+<p>
+	<strong>save_to_html()</strong></p>
+<p>
+	Call this function to get the HTML output of the whole form you have created.</p>
+<p>
+	<strong>html_from_json(<em>json_code</em>)</strong></p>
+<p>
+	If you have a json output of a form and you want to convert it to html, then this is the function you need to call. json_code is the json string you pass to the function and get the html equivalent of that json string.</p>
+<p>
+	<strong>save_to_json()</strong></p>
+<p>
+	Call this function to get the json output of the form you 've created.</p>
+<p>
+	<strong>Custom button</strong></p>
+<p>
+	In BSIDE in export section we have 'export to json' button and when you click that button a new modal window will open which show you the json output of your form and a button with 'custom button' title. If you want to embed BSIDE in you software or use it as a part of bigger software, you may want to write a code for this button.</p>
+<p>
+	In js folder of BSIDE, we have a <strong>custom_functions.js</strong> file which has a json_custom_button_clicked method. All you have to do is to write your own code in the body of this fucntion. When user clicks the 'custom button' button, this method will be called and the json code of your form will be passed to it as input parameters. For example I've provided a sample code which get the json output of the form and store it in a mysql database using ajax request.</p>
+</section>
+
+<section id="config">
+	<div class="page-header"><h3>Config</h3><hr class="notop"></div>
+	<p>
+		There is a config.js file in js forlder of BsIDE. Using this config you can hide or show components ( textbox, number, image, uploadfile...) and tab menus (Tools, Page, Element and Misc).
+		For Example suppose that you want to hide image component and misc tab:
+		this would be a new config (part of it):
+		<div style="font-size:1.5em;font-style:italic;">
+		<pre>
+		"tabPanel":{
+			"Tools":{
+				"hidden":false,
+				"id":"tools_menu_tab"
+			},
+			"Page":{
+				"hidden":false,
+				"id":"page_menu_tab"
+			},
+			"Element":{
+				"hidden":false,
+				"id":"element_menu_tab"
+			},
+			"Misc":{
+				"hidden":<span style="color:red;font-weight:bold">true</span>,
+				"id":"misc_menu_tab"
+			}
+		},
+		"Components":{
+			"iamge":{
+				"hidden":<span style="color:red;font-weight:bold">true</span>
+			},
+			"hbox":{
+				"hidden":false
+			}
+		}
+		</pre>
+		</div>
+	</p>
+</section>
+
+<section id="support">
+	<div class="page-header"><h3>Support</h3><hr class="notop"></div>
+<p>
+	If you have any suggestion or you want to report a bug just mail it to maroofi@gmail.com or fill out the  <a style = "color:blue;" href="http://bside.smaroofi.com/#contactUs">contact form</a>.</p>
+</section>
+<!--
+<section id="example_1">
+	<div class="page-header"><h3>Example 1</h3><hr class="notop"></div>
+<p>
+	Start Here</p>
+</section>
+<section id="example_2">
+	<div class="page-header"><h3>Example 2</h3><hr class="notop"></div>
+<p>
+	Start Here</p>
+</section>
+<section id="example_3">
+	<div class="page-header"><h3>Example 3</h3><hr class="notop"></div>
+<p>
+	Start Here</p>
+</section>
+<section id="example_4">
+	<div class="page-header"><h3>Example 4</h3><hr class="notop"></div>
+<p>
+	Start Here</p>
+</section>
+<section id="example_5">
+	<div class="page-header"><h3>Example 5</h3><hr class="notop"></div>
+</section>
+<section id="example_6">
+	<div class="page-header"><h3>Example 6</h3><hr class="notop"></div>
+<p>
+	Start Here</p>
+</section>
+<section id="example_7">
+	<div class="page-header"><h3>Example 7</h3><hr class="notop"></div>
+<p>
+	Start Here</p>
+</section>
+<section id="example_8">
+	<div class="page-header"><h3>Example 8</h3><hr class="notop"></div>
+<p>
+	Start Here</p>
+</section>
+<section id="example_9">
+	<div class="page-header"><h3>Example 9</h3><hr class="notop"></div>
+<p>
+	Start Here</p>
+</section>
+<section id="example_10">
+	<div class="page-header"><h3>Example 10</h3><hr class="notop"></div>
+<p>
+	Start Here</p>
+</section>
+-->
+	</div>
+</body>
+
+<!-- Mirrored from bside.smaroofi.com/bside/bside_doc/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 16 Dec 2018 14:45:40 GMT -->
+</html>

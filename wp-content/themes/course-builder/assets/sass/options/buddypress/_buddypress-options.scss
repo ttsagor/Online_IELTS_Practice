@@ -1,0 +1,17 @@
+#buddypress {
+	input[type=submit] {
+		background: $thim_body_primary_color;
+		border: 1px solid $thim_body_primary_color;
+		&:hover {
+			background: darken($thim_body_primary_color, 20%);
+			border-color: darken($thim_body_primary_color, 20%);;
+		}
+	}
+	.activity-list li.load-more,
+	.activity-list li.load-newest {
+		background: $thim_body_primary_color;
+		&:hover {
+			background: darken($thim_body_primary_color, 20%);
+		}
+	}
+}

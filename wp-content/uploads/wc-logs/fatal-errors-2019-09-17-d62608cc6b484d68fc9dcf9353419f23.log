@@ -1,0 +1,6 @@
+2019-09-17T04:40:30+00:00 CRITICAL require_once(): Failed opening required '/home/ielterti/public_html/wp-content/plugins/wordpress-social-login/hybridauth/Hybrid/Providers/facebook.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/ielterti/public_html/wp-content/plugins/wordpress-social-login/hybridauth/Hybrid/Provider_Adapter.php on line 96
+
+2019-09-17T04:40:32+00:00 CRITICAL require_once(): Failed opening required '/home/ielterti/public_html/wp-content/plugins/wordpress-social-login/hybridauth/Hybrid/Providers/google.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/ielterti/public_html/wp-content/plugins/wordpress-social-login/hybridauth/Hybrid/Provider_Adapter.php on line 96
+
+2019-09-17T04:40:33+00:00 CRITICAL require_once(): Failed opening required '/home/ielterti/public_html/wp-content/plugins/wordpress-social-login/hybridauth/Hybrid/Providers/twitter.php' (include_path='.:/opt/alt/php56/usr/share/pear:/opt/alt/php56/usr/share/php') in /home/ielterti/public_html/wp-content/plugins/wordpress-social-login/hybridauth/Hybrid/Provider_Adapter.php on line 96
+
